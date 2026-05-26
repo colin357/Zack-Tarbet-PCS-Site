@@ -47,7 +47,7 @@ export default function VALoanCTA() {
             </h2>
 
             <p style={{ color: "#9ca3af", lineHeight: 1.7, margin: "0 0 1.5rem", fontSize: "1rem" }}>
-              I&apos;m Zack Tarbet — a VA loan specialist who understands the unique challenges of a military PCS move. From PCS orders to closing day, I&apos;ll guide you every step of the way.
+              Heroes Home Network specializes in VA loans for military families navigating a PCS move. From orders to closing day, we&apos;ll guide you every step of the way.
             </p>
 
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 2rem", display: "flex", flexDirection: "column", gap: "0.625rem" }}>
@@ -96,10 +96,10 @@ export default function VALoanCTA() {
               display: "flex", alignItems: "center", justifyContent: "center",
               marginBottom: "1.25rem",
             }}>
-              <span style={{ color: "#f5c518", fontSize: "1.5rem", fontWeight: 800 }}>ZT</span>
+              <span style={{ color: "#f5c518", fontSize: "1.5rem", fontWeight: 800 }}>HHN</span>
             </div>
 
-            <h3 style={{ color: "#f1f5f9", fontSize: "1.25rem", fontWeight: 700, margin: "0 0 0.25rem" }}>Zack Tarbet</h3>
+            <h3 style={{ color: "#f1f5f9", fontSize: "1.25rem", fontWeight: 700, margin: "0 0 0.25rem" }}>Heroes Home Network</h3>
             <p style={{ color: "#f5c518", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.05em", margin: "0 0 1rem" }}>VA LOAN SPECIALIST · NMLS# [placeholder]</p>
 
             <div style={{ borderTop: "1px solid #1f2937", paddingTop: "1rem", display: "flex", flexDirection: "column", gap: "0.875rem" }}>

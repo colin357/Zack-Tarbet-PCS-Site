@@ -13,7 +13,7 @@ export default function Footer() {
                 <Shield size={18} color="#0a0f1e" />
               </div>
               <div>
-                <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1rem", letterSpacing: "0.05em" }}>ZACK TARBET</span>
+                <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1rem", letterSpacing: "0.05em" }}>HEROES HOME NETWORK</span>
                 <div style={{ color: "#6b7280", fontSize: "0.65rem", letterSpacing: "0.1em" }}>PCS & VA HOME LOANS</div>
               </div>
             </Link>
@@ -101,7 +101,7 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid #1f2937", paddingTop: "1.5rem", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "1rem", fontSize: "0.8rem" }}>
           <p style={{ margin: 0 }}>
-            © {new Date().getFullYear()} Zack Tarbet. NMLS# [placeholder]. Licensed VA Loan Specialist.
+            © {new Date().getFullYear()} Heroes Home Network. NMLS# [placeholder]. Licensed VA Loan Specialist.
           </p>
           <p style={{ margin: 0 }}>
             Equal Housing Lender. Not affiliated with the U.S. Department of Veterans Affairs.

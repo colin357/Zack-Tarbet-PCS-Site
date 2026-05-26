@@ -3,9 +3,9 @@ import Link from "next/link";
 import { CheckCircle, Home, DollarSign, Shield, Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "VA Home Loans | Zack Tarbet – Military PCS Specialist",
+  title: "VA Home Loans | Heroes Home Network",
   description:
-    "Learn about VA loan benefits, eligibility, and get pre-approved with Zack Tarbet — a VA loan specialist serving military families across all 50 states.",
+    "Learn about VA loan benefits, eligibility, and get pre-approved with Heroes Home Network — VA loan specialists serving military families across all 50 states.",
 };
 
 const benefits = [

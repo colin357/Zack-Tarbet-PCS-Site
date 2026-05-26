@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle, Calendar, Home, Truck, DollarSign, BookOpen, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "PCS Resources | Zack Tarbet – Military PCS Guide",
+  title: "PCS Resources | Heroes Home Network",
   description:
     "Everything you need for your military PCS move: checklists, BAH info, housing tips, moving guides, and more.",
 };

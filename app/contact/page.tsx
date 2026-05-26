@@ -37,7 +37,7 @@ export default function ContactPage() {
       <section style={{ background: "linear-gradient(135deg, #060c18 0%, #0a0f1e 100%)", padding: "4rem 1.5rem 3rem", borderBottom: "1px solid #1f2937" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: "rgba(245, 197, 24, 0.1)", border: "1px solid rgba(245, 197, 24, 0.3)", borderRadius: "9999px", padding: "0.375rem 1rem", marginBottom: "1.5rem" }}>
-            <span style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em" }}>CONTACT ZACK</span>
+            <span style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em" }}>CONTACT US</span>
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#f1f5f9", margin: "0 0 1rem", lineHeight: 1.2 }}>
             Let&apos;s Get You<br /><span style={{ color: "#f5c518" }}>Pre-Approved Today</span>
@@ -131,9 +131,9 @@ export default function ContactPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ backgroundColor: "#111827", border: "1px solid #1f2937", borderRadius: "12px", padding: "1.75rem" }}>
               <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: "rgba(245, 197, 24, 0.15)", border: "2px solid #f5c518", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem" }}>
-                <span style={{ color: "#f5c518", fontSize: "1.25rem", fontWeight: 800 }}>ZT</span>
+                <span style={{ color: "#f5c518", fontSize: "1.25rem", fontWeight: 800 }}>HHN</span>
               </div>
-              <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: "1.125rem", margin: "0 0 0.25rem" }}>Zack Tarbet</h3>
+              <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: "1.125rem", margin: "0 0 0.25rem" }}>Heroes Home Network</h3>
               <p style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.05em", margin: "0 0 1rem" }}>VA LOAN SPECIALIST · NMLS# [placeholder]</p>
               <p style={{ color: "#9ca3af", fontSize: "0.875rem", lineHeight: 1.6, margin: "0 0 1.25rem" }}>
                 I help military families navigate the VA loan process during PCS moves. Fast responses, clear answers, no runaround.

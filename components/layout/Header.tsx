@@ -162,7 +162,7 @@ export default function Header() {
               <Shield size={20} color="#0a0f1e" />
             </div>
             <div>
-              <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1.125rem", letterSpacing: "0.05em" }}>ZACK TARBET</span>
+              <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1.125rem", letterSpacing: "0.05em" }}>HEROES HOME NETWORK</span>
               <div style={{ color: "#6b7280", fontSize: "0.65rem", letterSpacing: "0.1em", marginTop: "-2px" }}>PCS & VA HOME LOANS</div>
             </div>
           </Link>

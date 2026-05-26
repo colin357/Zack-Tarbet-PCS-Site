@@ -4,7 +4,7 @@ import BaseCard from "@/components/installations/BaseCard";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Military Installations | Zack Tarbet PCS Guide",
+  title: "Military Installations | Heroes Home Network",
   description: "Browse all U.S. military installations by branch. Find base information, local housing, and VA loan resources for your next PCS move.",
 };
 

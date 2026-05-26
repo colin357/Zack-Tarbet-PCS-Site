@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const base = getBaseBySlug(slug);
   if (!base) return { title: "Installation Not Found" };
   return {
-    title: `${base.name} | Zack Tarbet PCS Guide`,
+    title: `${base.name} | Heroes Home Network`,
     description: `${base.description} Learn about VA home loans and local housing near ${base.name} in ${base.city}, ${base.state}.`,
   };
 }
@@ -191,7 +191,7 @@ export default async function BaseDetailPage({ params }: Props) {
             {/* VA Loan CTA */}
             <div style={{ backgroundColor: "#111827", border: "1px solid rgba(245, 197, 24, 0.3)", borderRadius: "12px", padding: "1.75rem" }}>
               <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "rgba(245, 197, 24, 0.15)", border: "2px solid #f5c518", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem" }}>
-                <span style={{ color: "#f5c518", fontWeight: 800, fontSize: "1rem" }}>ZT</span>
+                <span style={{ color: "#f5c518", fontWeight: 800, fontSize: "1rem" }}>HHN</span>
               </div>
               <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: "1.0625rem", margin: "0 0 0.375rem" }}>
                 Buying near {base.name}?
