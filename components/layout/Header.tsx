@@ -168,13 +168,13 @@ export default function Header() {
   return (
     <header style={{ backgroundColor: "#111827", borderBottom: "1px solid #1f2937", position: "sticky", top: 0, zIndex: 50 }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1rem" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px", gap: "0.5rem" }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-            <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority />
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: 0, flexShrink: 1 }}>
+            <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority style={{ width: "clamp(122px, 42vw, 168px)", height: "auto" }} />
           </Link>
 
-          <nav style={{ display: "flex", alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
+          <nav style={{ alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
             <div ref={dropdownRef} style={{ position: "relative" }}>
               <button onClick={() => setInstallationsOpen(!installationsOpen)} style={{ display: "flex", alignItems: "center", gap: "0.25rem", color: installationsOpen ? "#f5c518" : "#d1d5db", backgroundColor: "transparent", border: "none", cursor: "pointer", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", transition: "color 0.2s" }}>
                 INSTALLATIONS
@@ -222,7 +222,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <button onClick={() => setMobileOpen(!mobileOpen)} style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", color: "#d1d5db", padding: "0.5rem" }} className="md:hidden">
+          <button onClick={() => setMobileOpen(!mobileOpen)} style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", color: "#d1d5db", padding: "0.5rem", flexShrink: 0 }} className="md:hidden" aria-label={mobileOpen ? "Close menu" : "Open menu"}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -282,11 +282,6 @@ export default function Header() {
             </div>
           ) : null}
 
-          {[{ label: "PCS RESOURCES", href: "/pcs-resources" }, { label: "VA HOME LOANS", href: "/va-home-loans" }, { label: "CONTACT", href: "/contact" }].map((item) => (
-            <Link key={item.href} href={item.href} style={{ color: "#d1d5db", padding: "0.75rem 0", fontSize: "0.875rem", fontWeight: 600, textDecoration: "none", display: "block", borderBottom: "1px solid #1f2937" }} onClick={() => setMobileOpen(false)}>
-              {item.label}
-            </Link>
-          ))}
         </div>
       )}
     </header>
