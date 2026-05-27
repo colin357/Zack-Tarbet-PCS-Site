@@ -1,6 +1,8 @@
 import airForceDetails from "./details/air-force";
 import armyDetails from "./details/army";
 import otherDetails from "./details/other";
+import marineCorpsDetails from "./details/marine-corps";
+import navyDetails from "./details/navy";
 
 export interface Neighborhood {
   name: string;
@@ -35,6 +37,8 @@ const baseDetails: Record<string, BaseDetail> = {
   ...airForceDetails,
   ...armyDetails,
   ...otherDetails,
+  ...marineCorpsDetails,
+  ...navyDetails,
 };
 
 export function getBaseDetail(slug: string): BaseDetail | undefined {
