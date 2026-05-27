@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Shield } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const branches = [
   "Air Force",
@@ -111,8 +112,13 @@ const branchBases: Record<string, { name: string; slug: string }[]> = {
     { name: "MCAS Miramar", slug: "mcas-miramar" },
     { name: "MCAS New River", slug: "mcas-new-river" },
     { name: "MCAS Yuma", slug: "mcas-yuma" },
+    { name: "MCB Hawaii", slug: "mcb-hawaii" },
+    { name: "Camp H.M. Smith", slug: "camp-hm-smith" },
   ],
   "Navy": [
+    { name: "NAS Corpus Christi", slug: "nas-corpus-christi" },
+    { name: "NAS Fallon", slug: "nas-fallon" },
+    { name: "NAS Fort Worth JRB", slug: "nas-fort-worth-jrb" },
     { name: "NAS Jacksonville", slug: "nas-jacksonville" },
     { name: "NAS Key West", slug: "nas-key-west" },
     { name: "NAS Lemoore", slug: "nas-lemoore" },
@@ -123,8 +129,12 @@ const branchBases: Record<string, { name: string; slug: string }[]> = {
     { name: "NAB Coronado", slug: "nab-coronado" },
     { name: "NAVSTA Norfolk", slug: "navsta-norfolk" },
     { name: "NAVSTA Great Lakes", slug: "navsta-great-lakes" },
+    { name: "NAVSTA Newport", slug: "navsta-newport" },
+    { name: "NSA Annapolis", slug: "nsa-annapolis" },
+    { name: "NSA Mid-South", slug: "nsa-mid-south" },
     { name: "NSB Kings Bay", slug: "nsb-kings-bay" },
     { name: "NSB New London", slug: "nsb-new-london" },
+    { name: "NSY Pearl Harbor", slug: "nsy-pearl-harbor" },
   ],
   "Space Force": [
     { name: "Buckley SFB", slug: "buckley-sfb" },
@@ -157,14 +167,8 @@ export default function Header() {
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
-            <div style={{ backgroundColor: "#f5c518", borderRadius: "6px", padding: "6px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <Shield size={20} color="#0a0f1e" />
-            </div>
-            <div>
-              <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1.125rem", letterSpacing: "0.05em" }}>HEROES HOME NETWORK</span>
-              <div style={{ color: "#6b7280", fontSize: "0.65rem", letterSpacing: "0.1em", marginTop: "-2px" }}>PCS & VA HOME LOANS</div>
-            </div>
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority />
           </Link>
 
           {/* Desktop Nav */}
@@ -184,13 +188,12 @@ export default function Header() {
                 onMouseLeave={e => (e.currentTarget.style.color = installationsOpen ? "#f5c518" : "#d1d5db")}
               >
                 INSTALLATIONS
-                <ChevronDown size={16} style={{ transform: installationsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }} />
+                <ChevronDown size={16} style={{ transform: installationsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 220ms ease" }} />
               </button>
 
-              {installationsOpen && (
+              <div style={{ position: "absolute", top: "calc(100% + 8px)", left: "50%", transform: `translateX(-50%) ${installationsOpen ? "translateY(0) scale(1)" : "translateY(-8px) scale(0.98)"}`, transformOrigin: "top center", opacity: installationsOpen ? 1 : 0, pointerEvents: installationsOpen ? "auto" : "none", transition: "opacity 220ms ease, transform 220ms ease" }}>
                 <div style={{
-                  position: "absolute", top: "calc(100% + 8px)", left: "50%",
-                  transform: "translateX(-50%)", backgroundColor: "#111827",
+                  backgroundColor: "#111827",
                   border: "1px solid #1f2937", borderRadius: "8px",
                   boxShadow: "0 20px 60px rgba(0,0,0,0.5)", padding: "1.5rem",
                   display: "grid", gridTemplateColumns: "repeat(7, minmax(160px, 1fr))",
@@ -205,12 +208,12 @@ export default function Header() {
                       >
                         {branch.toUpperCase()}
                       </Link>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem", maxHeight: "320px", overflowY: "auto", paddingRight: "0.35rem" }}>
                         {(branchBases[branch] || []).slice(0, 12).map(base => (
                           <li key={base.slug}>
                             <Link
                               href={`/installations/${base.slug}`}
-                              style={{ color: "#9ca3af", fontSize: "0.8rem", textDecoration: "none", display: "block", transition: "color 0.15s" }}
+                              style={{ color: "#9ca3af", fontSize: "0.9rem", textDecoration: "none", display: "block", transition: "color 0.15s" }}
                               onClick={() => setInstallationsOpen(false)}
                               onMouseEnter={e => (e.currentTarget.style.color = "#f1f5f9")}
                               onMouseLeave={e => (e.currentTarget.style.color = "#9ca3af")}
@@ -232,7 +235,7 @@ export default function Header() {
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
 
             {[
@@ -286,7 +289,7 @@ export default function Header() {
               style={{ display: "flex", alignItems: "center", justifyContent: "space-between", color: "#d1d5db", backgroundColor: "transparent", border: "none", cursor: "pointer", padding: "0.75rem 0", fontSize: "0.875rem", fontWeight: 600, borderBottom: "1px solid #1f2937", width: "100%" }}
             >
               INSTALLATIONS
-              <ChevronDown size={16} style={{ transform: mobileInstallOpen ? "rotate(180deg)" : "rotate(0deg)" }} />
+              <ChevronDown size={16} style={{ transform: mobileInstallOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 220ms ease" }} />
             </button>
             {mobileInstallOpen && (
               <div style={{ paddingLeft: "1rem", paddingBottom: "0.5rem" }}>
