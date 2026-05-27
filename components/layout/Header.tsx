@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -91,7 +91,7 @@ const branchBases: Record<string, { name: string; slug: string }[]> = {
     { name: "CG Base Portsmouth", slug: "coast-guard-base-portsmouth" },
     { name: "CG Base Seattle", slug: "coast-guard-base-seattle" },
   ],
-  "Joint": [
+  Joint: [
     { name: "JB Anacostia-Bolling", slug: "joint-base-anacostia-bolling" },
     { name: "JB Andrews", slug: "joint-base-andrews" },
     { name: "JB Cape Cod", slug: "joint-base-cape-cod" },
@@ -137,12 +137,7 @@ const branchBases: Record<string, { name: string; slug: string }[]> = {
     { name: "NSY Pearl Harbor", slug: "nsy-pearl-harbor" },
   ],
   "Space Force": [
-    { name: "Buckley SFB", slug: "buckley-sfb" },
-    { name: "Los Angeles AFB", slug: "los-angeles-afb" },
-    { name: "Patrick SFB", slug: "patrick-sfb" },
-    { name: "Peterson SFB", slug: "peterson-sfb" },
-    { name: "Schriever SFB", slug: "schriever-sfb" },
-    { name: "Vandenberg SFB", slug: "vandenberg-sfb" },
+    { name: "Buckley SFB", slug: "buckley-sfb" }, { name: "Los Angeles AFB", slug: "los-angeles-afb" }, { name: "Patrick SFB", slug: "patrick-sfb" }, { name: "Peterson SFB", slug: "peterson-sfb" }, { name: "Schriever SFB", slug: "schriever-sfb" }, { name: "Vandenberg SFB", slug: "vandenberg-sfb" },
   ],
 };
 
@@ -150,7 +145,15 @@ export default function Header() {
   const [installationsOpen, setInstallationsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileInstallOpen, setMobileInstallOpen] = useState(false);
+  const [mobileSearch, setMobileSearch] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const allBases = useMemo(() => Object.values(branchBases).flat(), []);
+  const mobileResults = useMemo(() => {
+    const q = mobileSearch.trim().toLowerCase();
+    if (!q) return [];
+    return allBases.filter((b) => b.name.toLowerCase().includes(q)).slice(0, 20);
+  }, [allBases, mobileSearch]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -164,29 +167,16 @@ export default function Header() {
 
   return (
     <header style={{ backgroundColor: "#111827", borderBottom: "1px solid #1f2937", position: "sticky", top: 0, zIndex: 50 }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1rem" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
             <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority />
           </Link>
 
-          {/* Desktop Nav */}
           <nav style={{ display: "flex", alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
-            {/* Installations Dropdown */}
             <div ref={dropdownRef} style={{ position: "relative" }}>
-              <button
-                onClick={() => setInstallationsOpen(!installationsOpen)}
-                style={{
-                  display: "flex", alignItems: "center", gap: "0.25rem",
-                  color: installationsOpen ? "#f5c518" : "#d1d5db",
-                  backgroundColor: "transparent", border: "none", cursor: "pointer",
-                  padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem",
-                  fontWeight: 600, letterSpacing: "0.05em", transition: "color 0.2s",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#f5c518")}
-                onMouseLeave={e => (e.currentTarget.style.color = installationsOpen ? "#f5c518" : "#d1d5db")}
-              >
+              <button onClick={() => setInstallationsOpen(!installationsOpen)} style={{ display: "flex", alignItems: "center", gap: "0.25rem", color: installationsOpen ? "#f5c518" : "#d1d5db", backgroundColor: "transparent", border: "none", cursor: "pointer", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", transition: "color 0.2s" }}>
                 INSTALLATIONS
                 <ChevronDown size={16} style={{ transform: installationsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 220ms ease" }} />
               </button>
@@ -201,11 +191,7 @@ export default function Header() {
                 }}>
                   {branches.map(branch => (
                     <div key={branch}>
-                      <Link
-                        href={`/installations?branch=${encodeURIComponent(branch)}`}
-                        style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", display: "block", marginBottom: "0.75rem", textDecoration: "none" }}
-                        onClick={() => setInstallationsOpen(false)}
-                      >
+                      <Link href={`/installations?branch=${encodeURIComponent(branch)}`} style={{ color: "#f5c518", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", display: "block", marginBottom: "0.6rem", textDecoration: "none" }} onClick={() => setInstallationsOpen(false)}>
                         {branch.toUpperCase()}
                       </Link>
                       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem", maxHeight: "320px", overflowY: "auto", paddingRight: "0.35rem" }}>
@@ -222,15 +208,6 @@ export default function Header() {
                             </Link>
                           </li>
                         ))}
-                        <li>
-                          <Link
-                            href={`/installations?branch=${encodeURIComponent(branch)}`}
-                            style={{ color: "#f5c518", fontSize: "0.75rem", textDecoration: "none", display: "block", marginTop: "0.25rem" }}
-                            onClick={() => setInstallationsOpen(false)}
-                          >
-                            View all →
-                          </Link>
-                        </li>
                       </ul>
                     </div>
                   ))}
@@ -238,49 +215,19 @@ export default function Header() {
               </div>
             </div>
 
-            {[
-              { label: "PCS RESOURCES", href: "/pcs-resources" },
-              { label: "VA HOME LOANS", href: "/va-home-loans" },
-              { label: "CONTACT", href: "/contact" },
-            ].map(item => (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{ color: "#d1d5db", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#f5c518")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#d1d5db")}
-              >
+            {[{ label: "PCS RESOURCES", href: "/pcs-resources" }, { label: "VA HOME LOANS", href: "/va-home-loans" }, { label: "CONTACT", href: "/contact" }].map((item) => (
+              <Link key={item.href} href={item.href} style={{ color: "#d1d5db", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", textDecoration: "none" }}>
                 {item.label}
               </Link>
             ))}
-
-            <Link
-              href="/contact"
-              style={{
-                backgroundColor: "#f5c518", color: "#0a0f1e", padding: "0.5rem 1.25rem",
-                borderRadius: "6px", fontSize: "0.875rem", fontWeight: 700,
-                letterSpacing: "0.05em", textDecoration: "none", marginLeft: "0.5rem",
-                transition: "background-color 0.2s",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#f5c518")}
-            >
-              GET PRE-APPROVED
-            </Link>
           </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", color: "#d1d5db", padding: "0.5rem" }}
-            className="md:hidden"
-          >
+          <button onClick={() => setMobileOpen(!mobileOpen)} style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", color: "#d1d5db", padding: "0.5rem" }} className="md:hidden">
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
         <div style={{ backgroundColor: "#111827", borderTop: "1px solid #1f2937", padding: "1rem 1.5rem" }} className="md:hidden">
           <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
@@ -324,6 +271,22 @@ export default function Header() {
               GET PRE-APPROVED
             </Link>
           </div>
+
+          {mobileSearch.trim() ? (
+            <div style={{ maxHeight: "260px", overflowY: "auto", marginBottom: "0.75rem", border: "1px solid #1f2937", borderRadius: "8px" }}>
+              {mobileResults.length > 0 ? mobileResults.map((base) => (
+                <Link key={base.slug} href={`/installations/${base.slug}`} style={{ display: "block", padding: "0.72rem", color: "#d1d5db", textDecoration: "none", borderBottom: "1px solid #1f2937", fontSize: "0.9rem" }} onClick={() => setMobileOpen(false)}>
+                  {base.name}
+                </Link>
+              )) : <div style={{ padding: "0.72rem", color: "#64748b", fontSize: "0.85rem" }}>No matching installations.</div>}
+            </div>
+          ) : null}
+
+          {[{ label: "PCS RESOURCES", href: "/pcs-resources" }, { label: "VA HOME LOANS", href: "/va-home-loans" }, { label: "CONTACT", href: "/contact" }].map((item) => (
+            <Link key={item.href} href={item.href} style={{ color: "#d1d5db", padding: "0.75rem 0", fontSize: "0.875rem", fontWeight: 600, textDecoration: "none", display: "block", borderBottom: "1px solid #1f2937" }} onClick={() => setMobileOpen(false)}>
+              {item.label}
+            </Link>
+          ))}
         </div>
       )}
     </header>

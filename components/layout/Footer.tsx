@@ -21,11 +21,11 @@ export default function Footer() {
               Helping military members navigate PCS moves and secure VA home loans since day one. Serving all 50 states.
             </p>
             <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <a href="tel:+15551234567" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
-                <Phone size={14} color="#f5c518" /> (555) 123-4567
+              <a href="tel:+17194240561" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
+                <Phone size={14} color="#f5c518" /> (719) 424-0561
               </a>
-              <a href="mailto:zack@example.com" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
-                <Mail size={14} color="#f5c518" /> zack@example.com
+              <a href="mailto:Zack.Tarbet@originpoint.com" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
+                <Mail size={14} color="#f5c518" /> Zack.Tarbet@originpoint.com
               </a>
               <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
                 <MapPin size={14} color="#f5c518" /> Licensed in all 50 states
@@ -101,7 +101,7 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid #1f2937", paddingTop: "1.5rem", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "1rem", fontSize: "0.8rem" }}>
           <p style={{ margin: 0 }}>
-            © {new Date().getFullYear()} Heroes Home Network. NMLS# [placeholder]. Licensed VA Loan Specialist.
+            © {new Date().getFullYear()} Heroes Home Network. NMLS# 2040562. Licensed VA Loan Specialist.
           </p>
           <p style={{ margin: 0 }}>
             Equal Housing Lender. Not affiliated with the U.S. Department of Veterans Affairs.
