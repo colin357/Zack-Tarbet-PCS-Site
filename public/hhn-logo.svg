@@ -1,0 +1,7 @@
+<svg width="168" height="36" viewBox="0 0 168 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="34" height="34" rx="8" fill="#F5C518"/>
+  <path d="M18 7L27 11V18C27 24 23.2 29.5 18 31C12.8 29.5 9 24 9 18V11L18 7Z" fill="#0A0F1E"/>
+  <path d="M18 13L20.2 17.2L24.8 17.8L21.4 21L22.2 25.5L18 23.3L13.8 25.5L14.6 21L11.2 17.8L15.8 17.2L18 13Z" fill="#F5C518"/>
+  <text x="44" y="16" fill="#F5C518" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="0.08em">HEROES HOME</text>
+  <text x="44" y="30" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">NETWORK</text>
+</svg>
