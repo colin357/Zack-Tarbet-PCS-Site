@@ -32,15 +32,18 @@ export default async function InstallationsPage({ searchParams }: Props) {
   const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <div style={{ backgroundColor: "#0a0f1e", minHeight: "100vh" }}>
-      {/* Header */}
-      <section style={{ background: "linear-gradient(135deg, #060c18 0%, #0a0f1e 100%)", padding: "3rem 1.5rem 2rem", borderBottom: "1px solid #1f2937" }}>
+    <div style={{ backgroundColor: "#f8fafc", minHeight: "100vh" }}>
+      {/* Header — dark */}
+      <section style={{ backgroundColor: "#0f172a", padding: "3rem 1.5rem 2.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          <h1 style={{ color: "#f1f5f9", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 800, margin: "0 0 0.5rem" }}>
+          <p style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", margin: "0 0 0.5rem" }}>
+            {activeBranch || "All Branches"}
+          </p>
+          <h1 style={{ color: "#ffffff", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 900, margin: "0 0 0.5rem", letterSpacing: "-0.02em" }}>
             Military Installations
           </h1>
-          <p style={{ color: "#6b7280", fontSize: "1rem", margin: "0 0 1.5rem" }}>
-            {sorted.length} installations{activeBranch ? ` · ${activeBranch}` : " · All Branches"}
+          <p style={{ color: "#64748b", fontSize: "0.9rem", margin: "0 0 2rem" }}>
+            {sorted.length} installation{sorted.length !== 1 ? "s" : ""} found
           </p>
 
           {/* Search */}
@@ -50,9 +53,14 @@ export default async function InstallationsPage({ searchParams }: Props) {
               defaultValue={query}
               placeholder="Search by name, city, or state..."
               style={{
-                flex: 1, minWidth: "240px", backgroundColor: "#111827",
-                border: "1px solid #1f2937", borderRadius: "8px",
-                padding: "0.75rem 1rem", color: "#f1f5f9", fontSize: "0.9rem", outline: "none",
+                flex: 1, minWidth: "240px",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: "8px",
+                padding: "0.75rem 1rem",
+                color: "#f1f5f9",
+                fontSize: "0.9rem",
+                outline: "none",
               }}
             />
             <button type="submit" style={{
@@ -66,32 +74,25 @@ export default async function InstallationsPage({ searchParams }: Props) {
 
           {/* Branch filters */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            <Link
-              href="/installations"
-              style={{
-                padding: "0.375rem 0.875rem", borderRadius: "9999px", fontSize: "0.75rem",
-                fontWeight: 600, textDecoration: "none", border: "1px solid",
-                borderColor: !activeBranch ? "#f5c518" : "#374151",
-                backgroundColor: !activeBranch ? "rgba(245, 197, 24, 0.15)" : "transparent",
-                color: !activeBranch ? "#f5c518" : "#9ca3af",
-              }}
-            >
-              All Branches
+            <Link href="/installations" style={{
+              padding: "0.4rem 0.875rem", borderRadius: "6px", fontSize: "0.8rem",
+              fontWeight: 600, textDecoration: "none",
+              backgroundColor: !activeBranch ? "#f5c518" : "rgba(255,255,255,0.08)",
+              color: !activeBranch ? "#0a0f1e" : "#94a3b8",
+              border: !activeBranch ? "none" : "1px solid rgba(255,255,255,0.1)",
+            }}>
+              All
             </Link>
             {branches.map(branch => (
-              <Link
-                key={branch}
-                href={`/installations?branch=${encodeURIComponent(branch)}`}
-                style={{
-                  padding: "0.375rem 0.875rem", borderRadius: "9999px", fontSize: "0.75rem",
-                  fontWeight: 600, textDecoration: "none", border: "1px solid",
-                  borderColor: activeBranch === branch ? branchColors[branch] : "#374151",
-                  backgroundColor: activeBranch === branch ? `${branchColors[branch]}22` : "transparent",
-                  color: activeBranch === branch ? branchColors[branch] : "#9ca3af",
-                  display: "inline-flex", alignItems: "center", gap: "0.375rem",
-                }}
-              >
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: branchColors[branch], display: "inline-block" }} />
+              <Link key={branch} href={`/installations?branch=${encodeURIComponent(branch)}`} style={{
+                padding: "0.4rem 0.875rem", borderRadius: "6px", fontSize: "0.8rem",
+                fontWeight: 600, textDecoration: "none",
+                display: "inline-flex", alignItems: "center", gap: "0.375rem",
+                backgroundColor: activeBranch === branch ? `${branchColors[branch]}22` : "rgba(255,255,255,0.06)",
+                color: activeBranch === branch ? branchColors[branch] : "#94a3b8",
+                border: activeBranch === branch ? `1px solid ${branchColors[branch]}55` : "1px solid rgba(255,255,255,0.08)",
+              }}>
+                <span style={{ width: "7px", height: "7px", borderRadius: "50%", backgroundColor: branchColors[branch] }} />
                 {branch}
               </Link>
             ))}
@@ -99,18 +100,18 @@ export default async function InstallationsPage({ searchParams }: Props) {
         </div>
       </section>
 
-      {/* Grid */}
-      <section style={{ padding: "2rem 1.5rem" }}>
+      {/* Grid — light */}
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           {sorted.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "4rem 0", color: "#6b7280" }}>
+            <div style={{ textAlign: "center", padding: "4rem 0", color: "#64748b" }}>
               <p style={{ fontSize: "1.125rem", marginBottom: "0.5rem" }}>No installations found.</p>
-              <Link href="/installations" style={{ color: "#f5c518", fontSize: "0.875rem" }}>Clear filters →</Link>
+              <Link href="/installations" style={{ color: "#0f172a", fontSize: "0.875rem", fontWeight: 600 }}>Clear filters →</Link>
             </div>
           ) : (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem" }}>
               {sorted.map(base => (
-                <BaseCard key={base.slug} base={base} />
+                <BaseCard key={base.slug} base={base} light />
               ))}
             </div>
           )}
