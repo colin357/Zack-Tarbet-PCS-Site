@@ -144,6 +144,7 @@ const branchBases: Record<string, { name: string; slug: string }[]> = {
 export default function Header() {
   const [installationsOpen, setInstallationsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileInstallOpen, setMobileInstallOpen] = useState(false);
   const [mobileSearch, setMobileSearch] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
