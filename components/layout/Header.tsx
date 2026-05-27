@@ -174,7 +174,7 @@ export default function Header() {
             <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority style={{ width: "clamp(122px, 42vw, 168px)", height: "auto" }} />
           </Link>
 
-          <nav style={{ display: "flex", alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
+          <nav style={{ alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
             <div ref={dropdownRef} style={{ position: "relative" }}>
               <button onClick={() => setInstallationsOpen(!installationsOpen)} style={{ display: "flex", alignItems: "center", gap: "0.25rem", color: installationsOpen ? "#f5c518" : "#d1d5db", backgroundColor: "transparent", border: "none", cursor: "pointer", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", transition: "color 0.2s" }}>
                 INSTALLATIONS
