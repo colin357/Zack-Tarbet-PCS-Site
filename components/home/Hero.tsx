@@ -2,11 +2,34 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section style={{
-      background: "linear-gradient(160deg, #060c18 0%, #0d1a2e 60%, #0a1628 100%)",
-      padding: "6rem 1.5rem 5rem",
-    }}>
-      <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
+    <section
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        padding: "6rem 1.5rem 5rem",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('https://images.pexels.com/photos/33232137/pexels-photo-33232137.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(3px)",
+          transform: "scale(1.04)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(160deg, rgba(6,12,24,0.7) 0%, rgba(13,26,46,0.7) 60%, rgba(10,22,40,0.7) 100%)",
+        }}
+      />
+
+      <div style={{ position: "relative", maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
         <p style={{
           color: "#f5c518",
           fontSize: "0.75rem",
@@ -34,7 +57,7 @@ export default function Hero() {
         <p style={{
           fontSize: "1.125rem",
           lineHeight: 1.75,
-          color: "#64748b",
+          color: "#cbd5e1",
           maxWidth: "560px",
           margin: "0 auto 2.5rem",
         }}>
@@ -57,13 +80,13 @@ export default function Hero() {
           </Link>
           <Link href="/pcs-resources" style={{
             backgroundColor: "transparent",
-            color: "#94a3b8",
+            color: "#e2e8f0",
             padding: "0.9375rem 2rem",
             borderRadius: "6px",
             fontSize: "0.9375rem",
             fontWeight: 600,
             textDecoration: "none",
-            border: "1px solid rgba(255,255,255,0.12)",
+            border: "1px solid rgba(255,255,255,0.2)",
             display: "inline-block",
           }}>
             PCS Resources
