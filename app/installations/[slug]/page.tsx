@@ -74,7 +74,7 @@ export default async function BaseDetailPage({ params }: Props) {
             <span style={{ color: "#94a3b8" }}>{base.name}</span>
           </div>
 
-          <div style={{ padding: "2.5rem 0 3rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "2rem", alignItems: "start" }}>
+          <div className="base-hero-grid" style={{ padding: "2.5rem 0 3rem", display: "grid", gridTemplateColumns: "1fr auto", gap: "2rem", alignItems: "start" }}>
             <div>
               <div style={{
                 display: "inline-block",
@@ -137,7 +137,7 @@ export default async function BaseDetailPage({ params }: Props) {
 
       {/* ── Content + Sidebar ────────────────────────────────────────────── */}
       <section style={{ padding: "2.5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr minmax(0, 300px)", gap: "2rem", alignItems: "start" }}>
+        <div className="base-content-grid" style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr minmax(0, 300px)", gap: "2rem", alignItems: "start" }}>
 
           {/* ── Main content ── */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", minWidth: 0 }}>
@@ -299,7 +299,7 @@ export default async function BaseDetailPage({ params }: Props) {
           </div>
 
           {/* ── Sidebar ── */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem", position: "sticky", top: "80px" }}>
+          <div className="base-sidebar" style={{ display: "flex", flexDirection: "column", gap: "1rem", position: "sticky", top: "80px" }}>
             <div style={{ backgroundColor: "#0f172a", borderRadius: "12px", padding: "1.75rem" }}>
               <p style={{ color: "#f5c518", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", margin: "0 0 0.75rem" }}>
                 VA Home Loans
@@ -368,7 +368,13 @@ export default async function BaseDetailPage({ params }: Props) {
       )}
 
       <style>{`
+        @media (max-width: 1024px) {
+          .base-content-grid { grid-template-columns: minmax(0, 1fr) !important; }
+          .base-sidebar { position: static !important; top: auto !important; }
+        }
+
         @media (max-width: 768px) {
+          .base-hero-grid { grid-template-columns: minmax(0, 1fr) !important; }
           .base-hero-photo { display: none !important; }
         }
       `}</style>
