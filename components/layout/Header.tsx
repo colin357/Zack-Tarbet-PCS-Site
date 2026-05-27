@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const branches = [
   "Air Force",
@@ -103,10 +104,37 @@ const branchBases: Record<string, { name: string; slug: string }[]> = {
     { name: "JB San Antonio", slug: "joint-base-san-antonio" },
   ],
   "Marine Corps": [
-    { name: "Camp Lejeune", slug: "camp-lejeune" }, { name: "Camp Pendleton", slug: "camp-pendleton" }, { name: "MCB Quantico", slug: "mcb-quantico" }, { name: "MCAS Beaufort", slug: "mcas-beaufort" }, { name: "MCAS Cherry Point", slug: "mcas-cherry-point" }, { name: "MCAS Miramar", slug: "mcas-miramar" }, { name: "MCAS New River", slug: "mcas-new-river" }, { name: "MCAS Yuma", slug: "mcas-yuma" }, { name: "MCB Hawaii", slug: "mcb-hawaii" }, { name: "Camp H.M. Smith", slug: "camp-hm-smith" },
+    { name: "Camp Lejeune", slug: "camp-lejeune" },
+    { name: "Camp Pendleton", slug: "camp-pendleton" },
+    { name: "MCB Quantico", slug: "mcb-quantico" },
+    { name: "MCAS Beaufort", slug: "mcas-beaufort" },
+    { name: "MCAS Cherry Point", slug: "mcas-cherry-point" },
+    { name: "MCAS Miramar", slug: "mcas-miramar" },
+    { name: "MCAS New River", slug: "mcas-new-river" },
+    { name: "MCAS Yuma", slug: "mcas-yuma" },
+    { name: "MCB Hawaii", slug: "mcb-hawaii" },
+    { name: "Camp H.M. Smith", slug: "camp-hm-smith" },
   ],
-  Navy: [
-    { name: "NAS Corpus Christi", slug: "nas-corpus-christi" }, { name: "NAS Fallon", slug: "nas-fallon" }, { name: "NAS Fort Worth JRB", slug: "nas-fort-worth-jrb" }, { name: "NAS Jacksonville", slug: "nas-jacksonville" }, { name: "NAS Key West", slug: "nas-key-west" }, { name: "NAS Lemoore", slug: "nas-lemoore" }, { name: "NAS Oceana", slug: "nas-oceana" }, { name: "NAS Patuxent River", slug: "nas-patuxent-river" }, { name: "NAS Pensacola", slug: "nas-pensacola" }, { name: "NAS Whidbey Island", slug: "nas-whidbey-island" }, { name: "NAB Coronado", slug: "nab-coronado" }, { name: "NAVSTA Norfolk", slug: "navsta-norfolk" }, { name: "NAVSTA Great Lakes", slug: "navsta-great-lakes" }, { name: "NAVSTA Newport", slug: "navsta-newport" }, { name: "NSA Annapolis", slug: "nsa-annapolis" }, { name: "NSA Mid-South", slug: "nsa-mid-south" }, { name: "NSB Kings Bay", slug: "nsb-kings-bay" }, { name: "NSB New London", slug: "nsb-new-london" }, { name: "NSY Pearl Harbor", slug: "nsy-pearl-harbor" },
+  "Navy": [
+    { name: "NAS Corpus Christi", slug: "nas-corpus-christi" },
+    { name: "NAS Fallon", slug: "nas-fallon" },
+    { name: "NAS Fort Worth JRB", slug: "nas-fort-worth-jrb" },
+    { name: "NAS Jacksonville", slug: "nas-jacksonville" },
+    { name: "NAS Key West", slug: "nas-key-west" },
+    { name: "NAS Lemoore", slug: "nas-lemoore" },
+    { name: "NAS Oceana", slug: "nas-oceana" },
+    { name: "NAS Patuxent River", slug: "nas-patuxent-river" },
+    { name: "NAS Pensacola", slug: "nas-pensacola" },
+    { name: "NAS Whidbey Island", slug: "nas-whidbey-island" },
+    { name: "NAB Coronado", slug: "nab-coronado" },
+    { name: "NAVSTA Norfolk", slug: "navsta-norfolk" },
+    { name: "NAVSTA Great Lakes", slug: "navsta-great-lakes" },
+    { name: "NAVSTA Newport", slug: "navsta-newport" },
+    { name: "NSA Annapolis", slug: "nsa-annapolis" },
+    { name: "NSA Mid-South", slug: "nsa-mid-south" },
+    { name: "NSB Kings Bay", slug: "nsb-kings-bay" },
+    { name: "NSB New London", slug: "nsb-new-london" },
+    { name: "NSY Pearl Harbor", slug: "nsy-pearl-harbor" },
   ],
   "Space Force": [
     { name: "Buckley SFB", slug: "buckley-sfb" }, { name: "Los Angeles AFB", slug: "los-angeles-afb" }, { name: "Patrick SFB", slug: "patrick-sfb" }, { name: "Peterson SFB", slug: "peterson-sfb" }, { name: "Schriever SFB", slug: "schriever-sfb" }, { name: "Vandenberg SFB", slug: "vandenberg-sfb" },
@@ -140,14 +168,9 @@ export default function Header() {
     <header style={{ backgroundColor: "#111827", borderBottom: "1px solid #1f2937", position: "sticky", top: 0, zIndex: 50 }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1rem" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
-            <div style={{ backgroundColor: "#f5c518", borderRadius: "6px", padding: "6px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "#0a0f1e", fontWeight: 900, fontSize: "0.8rem", letterSpacing: "0.04em" }}>HHN</span>
-            </div>
-            <div>
-              <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1rem", letterSpacing: "0.05em" }}>HEROES HOME NETWORK</span>
-              <div style={{ color: "#6b7280", fontSize: "0.62rem", letterSpacing: "0.1em", marginTop: "-2px" }}>PCS & VA HOME LOANS</div>
-            </div>
+          {/* Logo */}
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority />
           </Link>
 
           <nav style={{ display: "flex", alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
@@ -157,17 +180,29 @@ export default function Header() {
                 <ChevronDown size={16} style={{ transform: installationsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 220ms ease" }} />
               </button>
 
-              <div style={{ position: "absolute", top: "calc(100% + 8px)", right: 0, left: "auto", transform: installationsOpen ? "translateY(0)" : "translateY(-8px)", transformOrigin: "top right", opacity: installationsOpen ? 1 : 0, pointerEvents: installationsOpen ? "auto" : "none", transition: "opacity 220ms ease, transform 220ms ease" }}>
-                <div style={{ backgroundColor: "#111827", border: "1px solid #1f2937", borderRadius: "8px", boxShadow: "0 20px 60px rgba(0,0,0,0.5)", padding: "1rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", width: "min(1120px, calc(100vw - 2rem))", maxHeight: "min(70vh, 620px)", overflowY: "auto" }}>
-                  {branches.map((branch) => (
+              <div style={{ position: "absolute", top: "calc(100% + 8px)", left: "50%", transform: `translateX(-50%) ${installationsOpen ? "translateY(0) scale(1)" : "translateY(-8px) scale(0.98)"}`, transformOrigin: "top center", opacity: installationsOpen ? 1 : 0, pointerEvents: installationsOpen ? "auto" : "none", transition: "opacity 220ms ease, transform 220ms ease" }}>
+                <div style={{
+                  backgroundColor: "#111827",
+                  border: "1px solid #1f2937", borderRadius: "8px",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.5)", padding: "1.5rem",
+                  display: "grid", gridTemplateColumns: "repeat(7, minmax(160px, 1fr))",
+                  gap: "1.5rem", width: "max-content", maxWidth: "calc(100vw - 3rem)",
+                }}>
+                  {branches.map(branch => (
                     <div key={branch}>
                       <Link href={`/installations?branch=${encodeURIComponent(branch)}`} style={{ color: "#f5c518", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", display: "block", marginBottom: "0.6rem", textDecoration: "none" }} onClick={() => setInstallationsOpen(false)}>
                         {branch.toUpperCase()}
                       </Link>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem", maxHeight: "250px", overflowY: "auto", paddingRight: "0.25rem" }}>
-                        {(branchBases[branch] || []).map((base) => (
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem", maxHeight: "320px", overflowY: "auto", paddingRight: "0.35rem" }}>
+                        {(branchBases[branch] || []).slice(0, 12).map(base => (
                           <li key={base.slug}>
-                            <Link href={`/installations/${base.slug}`} style={{ color: "#9ca3af", fontSize: "0.88rem", textDecoration: "none", display: "block", transition: "color 0.15s" }} onClick={() => setInstallationsOpen(false)}>
+                            <Link
+                              href={`/installations/${base.slug}`}
+                              style={{ color: "#9ca3af", fontSize: "0.9rem", textDecoration: "none", display: "block", transition: "color 0.15s" }}
+                              onClick={() => setInstallationsOpen(false)}
+                              onMouseEnter={e => (e.currentTarget.style.color = "#f1f5f9")}
+                              onMouseLeave={e => (e.currentTarget.style.color = "#9ca3af")}
+                            >
                               {base.name}
                             </Link>
                           </li>
@@ -193,16 +228,47 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div style={{ backgroundColor: "#111827", borderTop: "1px solid #1f2937", padding: "1rem" }} className="md:hidden">
-          <div style={{ position: "relative", marginBottom: "0.9rem" }}>
-            <Search size={16} style={{ position: "absolute", left: "0.75rem", top: "50%", transform: "translateY(-50%)", color: "#64748b" }} />
-            <input
-              type="text"
-              value={mobileSearch}
-              onChange={(e) => setMobileSearch(e.target.value)}
-              placeholder="Search installation (e.g., Fort Liberty)"
-              style={{ width: "100%", backgroundColor: "#0f172a", border: "1px solid #1f2937", color: "#e2e8f0", borderRadius: "8px", padding: "0.72rem 0.75rem 0.72rem 2.25rem", fontSize: "0.9rem" }}
-            />
+        <div style={{ backgroundColor: "#111827", borderTop: "1px solid #1f2937", padding: "1rem 1.5rem" }} className="md:hidden">
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+            <button
+              onClick={() => setMobileInstallOpen(!mobileInstallOpen)}
+              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", color: "#d1d5db", backgroundColor: "transparent", border: "none", cursor: "pointer", padding: "0.75rem 0", fontSize: "0.875rem", fontWeight: 600, borderBottom: "1px solid #1f2937", width: "100%" }}
+            >
+              INSTALLATIONS
+              <ChevronDown size={16} style={{ transform: mobileInstallOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 220ms ease" }} />
+            </button>
+            {mobileInstallOpen && (
+              <div style={{ paddingLeft: "1rem", paddingBottom: "0.5rem" }}>
+                {branches.map(branch => (
+                  <div key={branch} style={{ marginBottom: "0.75rem" }}>
+                    <Link href={`/installations?branch=${encodeURIComponent(branch)}`} style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 700, textDecoration: "none", display: "block", marginBottom: "0.25rem" }} onClick={() => setMobileOpen(false)}>
+                      {branch}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
+            {[
+              { label: "PCS RESOURCES", href: "/pcs-resources" },
+              { label: "VA HOME LOANS", href: "/va-home-loans" },
+              { label: "CONTACT", href: "/contact" },
+            ].map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{ color: "#d1d5db", padding: "0.75rem 0", fontSize: "0.875rem", fontWeight: 600, textDecoration: "none", display: "block", borderBottom: "1px solid #1f2937" }}
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              style={{ backgroundColor: "#f5c518", color: "#0a0f1e", padding: "0.75rem 1.25rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 700, textDecoration: "none", textAlign: "center", display: "block", marginTop: "0.75rem" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              GET PRE-APPROVED
+            </Link>
           </div>
 
           {mobileSearch.trim() ? (
