@@ -58,7 +58,7 @@ export default function FAQSection() {
                 </button>
                 <div
                   style={{
-                    maxHeight: open ? "180px" : "0px",
+                    maxHeight: open ? "400px" : "0px",
                     opacity: open ? 1 : 0,
                     transition: "max-height 260ms ease, opacity 220ms ease",
                     padding: open ? "0 1.1rem 1rem" : "0 1.1rem",

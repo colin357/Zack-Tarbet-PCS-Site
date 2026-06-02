@@ -21,7 +21,24 @@ export default function HomePage() {
       {/* 1. Hero — dark, text-only */}
       <Hero />
 
-      {/* 2. Interactive Map — dark */}
+      {/* 2. Trust bar */}
+      <div style={{ backgroundColor: "#060c18", borderBottom: "1px solid #1f2937" }}>
+        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "1.125rem 1.5rem", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0 3rem" }}>
+          {[
+            { value: "230+", label: "Military Installations" },
+            { value: "$0 Down", label: "VA Home Loans" },
+            { value: "All 50 States", label: "Licensed" },
+            { value: "NMLS# 2040562", label: "VA Loan Specialist" },
+          ].map(stat => (
+            <div key={stat.value} style={{ display: "flex", alignItems: "center", gap: "0.625rem", padding: "0.375rem 0" }}>
+              <span style={{ color: "#f5c518", fontWeight: 800, fontSize: "0.9375rem", whiteSpace: "nowrap" }}>{stat.value}</span>
+              <span style={{ color: "#334155", fontSize: "0.75rem", letterSpacing: "0.04em", whiteSpace: "nowrap" }}>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 3. Interactive Map — dark */}
       <section style={{ backgroundColor: "#060c18", padding: "4rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           <div style={{ marginBottom: "1.75rem" }}>
@@ -34,7 +51,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. Featured Bases — light */}
+      {/* 4. Featured Bases — light */}
       <section style={{ backgroundColor: "#f8fafc", padding: "4rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "2rem", flexWrap: "wrap", gap: "1rem" }}>
@@ -54,10 +71,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. FAQ — light */}
+      {/* 5. FAQ — light */}
       <FAQSection />
 
-      {/* 5. Soft CTA — dark */}
+      {/* 6. Soft CTA — dark */}
       <section style={{ backgroundColor: "#0f172a", padding: "4rem 1.5rem", borderTop: "1px solid #1e293b" }}>
         <div style={{ maxWidth: "680px", margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ color: "#ffffff", fontWeight: 800, fontSize: "1.5rem", margin: "0 0 0.875rem", letterSpacing: "-0.02em" }}>

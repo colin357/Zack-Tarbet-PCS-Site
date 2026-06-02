@@ -219,6 +219,9 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/contact" style={{ backgroundColor: "#f5c518", color: "#0a0f1e", padding: "0.5rem 1rem", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.25rem", flexShrink: 0, whiteSpace: "nowrap" }}>
+              Get Pre-Approved
+            </Link>
           </nav>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", color: "#d1d5db", padding: "0.5rem", flexShrink: 0 }} className="md:hidden" aria-label={mobileOpen ? "Close menu" : "Open menu"}>

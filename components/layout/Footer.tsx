@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Shield, Phone } from "lucide-react";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,14 +9,8 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "2rem", marginBottom: "2.5rem" }}>
           {/* Brand */}
           <div>
-            <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", marginBottom: "1rem" }}>
-              <div style={{ backgroundColor: "#f5c518", borderRadius: "6px", padding: "6px" }}>
-                <Shield size={18} color="#0a0f1e" />
-              </div>
-              <div>
-                <span style={{ color: "#f5c518", fontWeight: 700, fontSize: "1rem", letterSpacing: "0.05em" }}>HEROES HOME NETWORK</span>
-                <div style={{ color: "#6b7280", fontSize: "0.65rem", letterSpacing: "0.1em" }}>PCS & VA HOME LOANS</div>
-              </div>
+            <Link href="/" style={{ display: "inline-flex", textDecoration: "none", marginBottom: "1rem" }}>
+              <Image src="/hhn-logo.png" alt="Heroes Home Network" width={52} height={52} style={{ height: "52px", width: "auto" }} />
             </Link>
             <p style={{ fontSize: "0.875rem", lineHeight: 1.6, maxWidth: "260px" }}>
               Helping military members navigate PCS moves and secure VA home loans since day one. Serving all 50 states.
