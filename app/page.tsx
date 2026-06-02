@@ -5,6 +5,7 @@ import Hero from "@/components/home/Hero";
 import BaseCard from "@/components/installations/BaseCard";
 import BaseMapSection from "@/components/home/BaseMapSection";
 import FAQSection from "@/components/home/FAQSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 const featuredSlugs = [
   "fort-liberty", "camp-lejeune", "joint-base-lewis-mcchord",
@@ -71,10 +72,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. FAQ — light */}
+      {/* 5. Testimonials — dark */}
+      <TestimonialsSection />
+
+      {/* 6. FAQ — light */}
       <FAQSection />
 
-      {/* 6. Soft CTA — dark */}
+      {/* 7. Soft CTA — dark */}
       <section style={{ backgroundColor: "#0f172a", padding: "4rem 1.5rem", borderTop: "1px solid #1e293b" }}>
         <div style={{ maxWidth: "680px", margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ color: "#ffffff", fontWeight: 800, fontSize: "1.5rem", margin: "0 0 0.875rem", letterSpacing: "-0.02em" }}>
