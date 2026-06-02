@@ -7,6 +7,7 @@ import { bases, getBaseBySlug, getBasesByBranch, branchColors } from "@/data/bas
 import { getBaseDetail } from "@/data/baseDetails";
 import type { LocalActivity } from "@/data/baseDetails";
 import BaseCard from "@/components/installations/BaseCard";
+import { getBaseImage } from "@/data/baseImages";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -120,7 +121,7 @@ export default async function BaseDetailPage({ params }: Props) {
             <div style={{ width: "260px", flexShrink: 0 }} className="base-hero-photo">
               <div style={{ borderRadius: "12px", overflow: "hidden", aspectRatio: "4/3", position: "relative" }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80"
+                  src={getBaseImage(base.state)}
                   alt={`Neighborhood near ${base.name}`}
                   fill
                   style={{ objectFit: "cover" }}

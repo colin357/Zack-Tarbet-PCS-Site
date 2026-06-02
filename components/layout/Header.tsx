@@ -171,7 +171,7 @@ export default function Header() {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px", gap: "0.5rem" }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: 0, flexShrink: 1 }}>
-            <Image src="/hhn-logo.png" alt="Heroes Home Network" width={168} height={36} priority style={{ width: "clamp(122px, 42vw, 168px)", height: "auto" }} />
+            <Image src="/hhn-logo.png" alt="Heroes Home Network" width={44} height={44} priority style={{ height: "44px", width: "auto" }} />
           </Link>
 
           <nav style={{ alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
@@ -219,6 +219,9 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/contact" style={{ backgroundColor: "#f5c518", color: "#0a0f1e", padding: "0.5rem 1rem", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.25rem", flexShrink: 0, whiteSpace: "nowrap" }}>
+              Get Pre-Approved
+            </Link>
           </nav>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} style={{ backgroundColor: "transparent", border: "none", cursor: "pointer", color: "#d1d5db", padding: "0.5rem", flexShrink: 0 }} className="md:hidden" aria-label={mobileOpen ? "Close menu" : "Open menu"}>
