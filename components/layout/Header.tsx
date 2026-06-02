@@ -171,7 +171,7 @@ export default function Header() {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px", gap: "0.5rem" }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: 0, flexShrink: 1 }}>
-            <Image src="/hhn-logo.svg" alt="Heroes Home Network" width={168} height={36} priority style={{ width: "clamp(122px, 42vw, 168px)", height: "auto" }} />
+            <Image src="/hhn-logo.png" alt="Heroes Home Network" width={168} height={36} priority style={{ width: "clamp(122px, 42vw, 168px)", height: "auto" }} />
           </Link>
 
           <nav style={{ alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
@@ -181,36 +181,35 @@ export default function Header() {
                 <ChevronDown size={16} style={{ transform: installationsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 220ms ease" }} />
               </button>
 
-              <div style={{ position: "absolute", top: "calc(100% + 8px)", left: "50%", transform: `translateX(-50%) ${installationsOpen ? "translateY(0) scale(1)" : "translateY(-8px) scale(0.98)"}`, transformOrigin: "top center", opacity: installationsOpen ? 1 : 0, pointerEvents: installationsOpen ? "auto" : "none", transition: "opacity 220ms ease, transform 220ms ease" }}>
-                <div style={{
-                  backgroundColor: "#111827",
-                  border: "1px solid #1f2937", borderRadius: "8px",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.5)", padding: "1.5rem",
-                  display: "grid", gridTemplateColumns: "repeat(7, minmax(160px, 1fr))",
-                  gap: "1.5rem", width: "max-content", maxWidth: "calc(100vw - 3rem)",
-                }}>
-                  {branches.map(branch => (
-                    <div key={branch}>
-                      <Link href={`/installations?branch=${encodeURIComponent(branch)}`} style={{ color: "#f5c518", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", display: "block", marginBottom: "0.6rem", textDecoration: "none" }} onClick={() => setInstallationsOpen(false)}>
-                        {branch.toUpperCase()}
-                      </Link>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem", maxHeight: "320px", overflowY: "auto", paddingRight: "0.35rem" }}>
-                        {(branchBases[branch] || []).slice(0, 12).map(base => (
-                          <li key={base.slug}>
-                            <Link
-                              href={`/installations/${base.slug}`}
-                              style={{ color: "#9ca3af", fontSize: "0.9rem", textDecoration: "none", display: "block", transition: "color 0.15s" }}
-                              onClick={() => setInstallationsOpen(false)}
-                              onMouseEnter={e => (e.currentTarget.style.color = "#f1f5f9")}
-                              onMouseLeave={e => (e.currentTarget.style.color = "#9ca3af")}
-                            >
-                              {base.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+              <div style={{ position: "fixed", top: "64px", left: 0, right: 0, zIndex: 100, opacity: installationsOpen ? 1 : 0, pointerEvents: installationsOpen ? "auto" : "none", transform: installationsOpen ? "translateY(0)" : "translateY(-6px)", transition: "opacity 200ms ease, transform 200ms ease" }}>
+                <div style={{ backgroundColor: "#111827", borderBottom: "1px solid #1f2937", boxShadow: "0 20px 60px rgba(0,0,0,0.5)" }}>
+                  <div style={{
+                    maxWidth: "1280px", margin: "0 auto", padding: "1.5rem 1rem",
+                    display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "1.25rem",
+                  }}>
+                    {branches.map(branch => (
+                      <div key={branch}>
+                        <Link href={`/installations?branch=${encodeURIComponent(branch)}`} style={{ color: "#f5c518", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", display: "block", marginBottom: "0.6rem", textDecoration: "none" }} onClick={() => setInstallationsOpen(false)}>
+                          {branch.toUpperCase()}
+                        </Link>
+                        <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem", maxHeight: "300px", overflowY: "auto" }}>
+                          {(branchBases[branch] || []).slice(0, 12).map(base => (
+                            <li key={base.slug}>
+                              <Link
+                                href={`/installations/${base.slug}`}
+                                style={{ color: "#9ca3af", fontSize: "0.875rem", textDecoration: "none", display: "block", transition: "color 0.15s" }}
+                                onClick={() => setInstallationsOpen(false)}
+                                onMouseEnter={e => (e.currentTarget.style.color = "#f1f5f9")}
+                                onMouseLeave={e => (e.currentTarget.style.color = "#9ca3af")}
+                              >
+                                {base.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

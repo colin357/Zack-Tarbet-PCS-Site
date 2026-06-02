@@ -151,18 +151,18 @@ export default async function BaseDetailPage({ params }: Props) {
                 </p>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1rem" }}>
                   {detail.neighborhoods.map(n => (
-                    <div key={n.name} style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "8px", padding: "1.125rem" }}>
-                      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.5rem", marginBottom: "0.5rem" }}>
-                        <h3 style={{ color: "#0f172a", fontWeight: 700, fontSize: "0.9375rem", margin: 0 }}>{n.name}</h3>
-                        <span style={{ display: "flex", alignItems: "center", gap: "0.25rem", color: "#64748b", fontSize: "0.72rem", whiteSpace: "nowrap", flexShrink: 0 }}>
-                          <Clock size={10} />
+                    <div key={n.name} style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "8px", padding: "1.25rem" }}>
+                      <div style={{ marginBottom: "0.625rem" }}>
+                        <h3 style={{ color: "#0f172a", fontWeight: 700, fontSize: "1rem", margin: "0 0 0.25rem" }}>{n.name}</h3>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", color: "#64748b", fontSize: "0.78rem" }}>
+                          <Clock size={12} />
                           {n.commute}
                         </span>
                       </div>
-                      <p style={{ color: "#475569", fontSize: "0.8rem", lineHeight: 1.6, margin: "0 0 0.75rem" }}>{n.description}</p>
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
+                      <p style={{ color: "#475569", fontSize: "0.825rem", lineHeight: 1.6, margin: "0 0 0.875rem" }}>{n.description}</p>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                         {n.tags.map(tag => (
-                          <span key={tag} style={{ backgroundColor: "#e2e8f0", color: "#475569", fontSize: "0.67rem", fontWeight: 600, padding: "0.2rem 0.5rem", borderRadius: "9999px" }}>
+                          <span key={tag} style={{ backgroundColor: "#e2e8f0", color: "#475569", fontSize: "0.72rem", fontWeight: 600, padding: "0.25rem 0.625rem", borderRadius: "9999px" }}>
                             {tag}
                           </span>
                         ))}
@@ -319,11 +319,11 @@ export default async function BaseDetailPage({ params }: Props) {
               }}>
                 Get Pre-Approved
               </Link>
-              <a href="tel:+17194240561" style={{
+              <a href="tel:+13037287690" style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
                 color: "#475569", textDecoration: "none", fontSize: "0.8rem",
               }}>
-                <Phone size={13} color="#64748b" /> (719) 424-0561
+                <Phone size={13} color="#64748b" /> (303) 728-7690
               </a>
             </div>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Phone, Mail, Clock, Shield, Send } from "lucide-react";
+import { Phone, Clock, Shield, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -70,7 +70,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label style={labelStyle}>PHONE</label>
-                    <input name="phone" value={form.phone} onChange={handleChange} type="tel" placeholder="(719) 424-0561" style={inputStyle} />
+                    <input name="phone" value={form.phone} onChange={handleChange} type="tel" placeholder="(303) 728-7690" style={inputStyle} />
                   </div>
                 </div>
 
@@ -131,24 +131,18 @@ export default function ContactPage() {
           {/* Sidebar */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ backgroundColor: "#111827", border: "1px solid #1f2937", borderRadius: "12px", padding: "1.75rem" }}>
-              <Image src="https://a.mktgcdn.com/p/wOj193IfFEKEiVZQbXyFGqhl5VyOP1LvgRjArUSvTj4/191x275.jpg" alt="Zack Tarbet headshot" width={64} height={64} style={{ borderRadius: "50%", objectFit: "cover", border: "2px solid #f5c518", marginBottom: "1rem" }} />
+              <Image src="/hhn-logo.png" alt="Heroes Home Network" width={160} height={40} style={{ objectFit: "contain", marginBottom: "1rem" }} />
               <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: "1.125rem", margin: "0 0 0.25rem" }}>Heroes Home Network</h3>
               <p style={{ color: "#f5c518", fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.05em", margin: "0 0 1rem" }}>VA LOAN SPECIALIST · NMLS# 2040562</p>
               <p style={{ color: "#9ca3af", fontSize: "0.875rem", lineHeight: 1.6, margin: "0 0 1.25rem" }}>
                 I help military families navigate the VA loan process during PCS moves. Fast responses, clear answers, no runaround.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                <a href="tel:+17194240561" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", textDecoration: "none", fontSize: "0.875rem" }}>
+                <a href="tel:+13037287690" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", textDecoration: "none", fontSize: "0.875rem" }}>
                   <div style={{ width: "36px", height: "36px", backgroundColor: "rgba(245, 197, 24, 0.1)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <Phone size={16} color="#f5c518" />
                   </div>
-                  (719) 424-0561
-                </a>
-                <a href="mailto:Zack.Tarbet@originpoint.com" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", textDecoration: "none", fontSize: "0.875rem" }}>
-                  <div style={{ width: "36px", height: "36px", backgroundColor: "rgba(245, 197, 24, 0.1)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Mail size={16} color="#f5c518" />
-                  </div>
-                  Zack.Tarbet@originpoint.com
+                  (303) 728-7690
                 </a>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", fontSize: "0.875rem" }}>
                   <div style={{ width: "36px", height: "36px", backgroundColor: "rgba(245, 197, 24, 0.1)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
