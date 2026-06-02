@@ -741,17 +741,6 @@ export const bases: Base[] = [
     website: "https://home.army.mil/moore/",
   },
   {
-    name: "Fort Myer",
-    slug: "fort-myer",
-    branch: "Army",
-    city: "Arlington",
-    state: "VA",
-    lat: 38.8782,
-    lng: -77.0744,
-    description: "Fort Myer is a historic Army post in Arlington, Virginia, adjacent to Arlington National Cemetery and the Pentagon, serving primarily as the home of the Army's ceremonial units including the 3rd US Infantry Regiment (The Old Guard) and the US Army Band. The base offers a prestigious assignment in the heart of the National Capital Region with unparalleled access to Washington D.C.'s monuments, museums, and cultural institutions. Arlington's cost of living is among the highest in the country, but the professional networks and career opportunities are exceptional.",
-    website: "https://home.army.mil/myer-hendersonhall/",
-  },
-  {
     name: "Fort Novosel",
     slug: "fort-novosel",
     branch: "Army",
