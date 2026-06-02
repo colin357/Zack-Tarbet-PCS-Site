@@ -171,7 +171,7 @@ export default function Header() {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px", gap: "0.5rem" }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: 0, flexShrink: 1 }}>
-            <Image src="/hhn-logo.png" alt="Heroes Home Network" width={168} height={36} priority style={{ width: "clamp(122px, 42vw, 168px)", height: "auto" }} />
+            <Image src="/hhn-logo.png" alt="Heroes Home Network" width={44} height={44} priority style={{ height: "44px", width: "auto" }} />
           </Link>
 
           <nav style={{ alignItems: "center", gap: "0.25rem" }} className="hidden md:flex">
