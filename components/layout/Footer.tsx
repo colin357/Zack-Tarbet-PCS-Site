@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, Phone, Mail, MapPin } from "lucide-react";
+import { Shield, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -21,15 +21,9 @@ export default function Footer() {
               Helping military members navigate PCS moves and secure VA home loans since day one. Serving all 50 states.
             </p>
             <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <a href="tel:+17194240561" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
-                <Phone size={14} color="#f5c518" /> (719) 424-0561
+              <a href="tel:+13037287690" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
+                <Phone size={14} color="#f5c518" /> (303) 728-7690
               </a>
-              <a href="mailto:Zack.Tarbet@originpoint.com" style={{ color: "#9ca3af", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
-                <Mail size={14} color="#f5c518" /> Zack.Tarbet@originpoint.com
-              </a>
-              <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
-                <MapPin size={14} color="#f5c518" /> Licensed in all 50 states
-              </span>
             </div>
           </div>
 
