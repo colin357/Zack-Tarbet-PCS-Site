@@ -8,7 +8,7 @@ import FAQSection from "@/components/home/FAQSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 const featuredSlugs = [
-  "fort-liberty", "camp-lejeune", "joint-base-lewis-mcchord",
+  "fort-bragg", "camp-lejeune", "joint-base-lewis-mcchord",
   "nellis-afb", "fort-campbell", "navsta-norfolk",
   "camp-pendleton", "macdill-afb",
 ];
