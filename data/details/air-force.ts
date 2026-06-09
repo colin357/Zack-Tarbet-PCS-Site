@@ -2588,6 +2588,676 @@ const airForceDetails: Record<string, BaseDetail> = {
       hotNeighborhoods: ["Kathleen", "Warner Robins North"],
     },
   },
+  "scott-afb": {
+    neighborhoods: [
+      {
+        name: "O'Fallon",
+        description: "A fast-growing St. Louis suburb consistently ranked among the best places to live in Illinois. Excellent schools, abundant retail, and a family-oriented community with parks and rec programs.",
+        commute: "10–15 min to base",
+        tags: ["Family-friendly", "Suburban", "New construction"],
+      },
+      {
+        name: "Shiloh",
+        description: "A quiet residential community directly adjacent to Scott AFB with tree-lined streets and convenient base access. Very popular with military families for its proximity and affordability.",
+        commute: "5–10 min to base",
+        tags: ["Military community", "Affordable", "Suburban"],
+      },
+      {
+        name: "Belleville",
+        description: "The St. Clair County seat with a charming historic downtown, diverse dining, and a mix of older homes and new development. Offers a small-city feel with easy access to St. Louis.",
+        commute: "10–15 min to base",
+        tags: ["Historic", "Walkable", "Affordable"],
+      },
+    ],
+    schools: {
+      district: "O'Fallon Township High School District 203 / Belleville District 118",
+      context: "The metro-east area offers several strong school districts. O'Fallon schools are particularly well-regarded and draw many military families. Belleville also has solid public and parochial school options.",
+      highlights: [
+        "O'Fallon Township High School is one of the largest and highest-performing in the region",
+        "Shiloh Village schools have small class sizes and strong military family support",
+        "Multiple parochial and private school options throughout the metro-east",
+      ],
+    },
+    activities: [
+      {
+        name: "Gateway Arch National Park",
+        category: "Attraction",
+        description: "Just 20 minutes across the river in downtown St. Louis, the iconic 630-foot Gateway Arch offers tram rides to the top and a museum of westward expansion.",
+      },
+      {
+        name: "Eckert's Orchards",
+        category: "Outdoors",
+        description: "A beloved family farm in Belleville offering pick-your-own fruits, a country store, and seasonal festivals — a metro-east tradition since 1910.",
+      },
+      {
+        name: "St. Louis Zoo",
+        category: "Attraction",
+        description: "One of the nation's top zoos with free admission, located in Forest Park. Features over 16,000 animals and world-class exhibits.",
+      },
+      {
+        name: "Global Brew Tap House",
+        category: "Dining",
+        description: "A popular O'Fallon craft beer bar with rotating taps and hearty pub fare, a favorite gathering spot for Scott AFB personnel.",
+      },
+      {
+        name: "Busch Stadium",
+        category: "Entertainment",
+        description: "Home of the St. Louis Cardinals, just across the river. Military appreciation nights and affordable bleacher seats make it a regular outing for base families.",
+      },
+    ],
+    housing: {
+      priceRange: "$180,000–$350,000",
+      rentRange: "$1,000–$1,600/mo",
+      marketContext: "The metro-east Illinois market is significantly more affordable than the Missouri side of St. Louis. O'Fallon commands a premium for schools while Belleville and Shiloh offer strong value. BAH stretches well here.",
+      hotNeighborhoods: ["O'Fallon", "Shiloh", "Swansea"],
+    },
+  },
+  "seymour-johnson-afb": {
+    neighborhoods: [
+      {
+        name: "Goldsboro (West Side)",
+        description: "The western neighborhoods of Goldsboro closest to base offer affordable single-family homes, convenient shopping, and quick gate access. A practical choice for E-5 and below.",
+        commute: "5–10 min to base",
+        tags: ["Affordable", "Military community", "Suburban"],
+      },
+      {
+        name: "Pikeville / Mar-Mac",
+        description: "Unincorporated communities north of Goldsboro with larger lots, newer construction, and a rural feel. Popular with families wanting more space and privacy.",
+        commute: "15–20 min to base",
+        tags: ["Rural", "Family-friendly", "New construction"],
+      },
+      {
+        name: "Mount Olive / Dudley",
+        description: "Small towns south and east of base with very affordable housing, farmland, and a tight-knit community atmosphere. A budget-friendly option for junior enlisted.",
+        commute: "15–25 min to base",
+        tags: ["Rural", "Affordable"],
+      },
+    ],
+    schools: {
+      district: "Wayne County Public Schools",
+      context: "Wayne County schools serve the Goldsboro area and have seen investments in STEM programs and facility upgrades. Several schools have active military family liaison programs due to the base presence.",
+      highlights: [
+        "Eastern Wayne High School and Goldsboro High School offer AP and CTE programs",
+        "Strong JROTC programs with Air Force connections",
+        "Wayne School of Engineering (magnet) offers STEM-focused curriculum",
+      ],
+    },
+    activities: [
+      {
+        name: "Cliffs of the Neuse State Park",
+        category: "Outdoors",
+        description: "A scenic state park along the Neuse River with swimming, hiking, and striking 90-foot cliffs — one of the geological gems of eastern North Carolina.",
+      },
+      {
+        name: "Wilber's Barbecue",
+        category: "Dining",
+        description: "A legendary eastern NC whole-hog barbecue joint in Goldsboro since 1962. Vinegar-based sauce and pit-cooked pork make it a must-stop for newcomers.",
+      },
+      {
+        name: "Seymour Johnson Golf Course",
+        category: "Outdoors",
+        description: "An on-base 18-hole course open to military and dependents, well-maintained and very affordable — one of the best MWR golf values in the Air Force.",
+      },
+      {
+        name: "Downtown Goldsboro Arts District",
+        category: "Entertainment",
+        description: "A revitalized downtown with galleries, murals, craft breweries, and the historic Paramount Theatre hosting live music and community events.",
+      },
+      {
+        name: "Grady's Barbecue",
+        category: "Dining",
+        description: "Another acclaimed whole-hog pit in nearby Dudley, often ranked among the top BBQ spots in North Carolina. Cash only and worth the trip.",
+      },
+      {
+        name: "Cherry Hospital Recreation Trail",
+        category: "Outdoors",
+        description: "A paved multi-use trail near Goldsboro popular with runners, cyclists, and families. Connects to local greenway extensions.",
+      },
+    ],
+    housing: {
+      priceRange: "$150,000–$280,000",
+      rentRange: "$850–$1,400/mo",
+      marketContext: "Goldsboro is one of the most affordable duty stations in the Air Force. Housing costs are well below the national average and BAH covers most options comfortably. Newer construction is available in the Mar-Mac area.",
+      hotNeighborhoods: ["West Goldsboro", "Mar-Mac", "Pikeville"],
+    },
+  },
+  "shaw-afb": {
+    neighborhoods: [
+      {
+        name: "Sumter (West Side)",
+        description: "The western neighborhoods of Sumter nearest to Shaw offer convenient access, established neighborhoods, and good value. Many military families settle here for the short commute.",
+        commute: "5–10 min to base",
+        tags: ["Military community", "Affordable", "Suburban"],
+      },
+      {
+        name: "Dalzell",
+        description: "A small unincorporated community just outside Shaw's main gate with affordable homes and a quiet, rural setting. Extremely convenient for daily commuters.",
+        commute: "5 min to base",
+        tags: ["Rural", "Military community", "Affordable"],
+      },
+      {
+        name: "Columbia (Northeast)",
+        description: "The northeast suburbs of Columbia such as Lugoff, Elgin, and Northeast Richland offer better schools and more amenities, though the commute is longer. Popular with families prioritizing education.",
+        commute: "35–45 min to base",
+        tags: ["Family-friendly", "Suburban", "New construction"],
+      },
+    ],
+    schools: {
+      district: "Sumter School District",
+      context: "Sumter School District is the primary district serving the base area. While performance is mixed, the district has invested in choice and magnet programs. Some families commute from the Columbia area for Richland or Kershaw County schools.",
+      highlights: [
+        "Sumter High School and Crestwood High School offer AP, IB, and career-tech programs",
+        "Alice Drive schools are among the stronger elementary/middle options in Sumter",
+        "Families in Lugoff/Elgin area access well-rated Kershaw County schools",
+      ],
+    },
+    activities: [
+      {
+        name: "Swan Lake Iris Gardens",
+        category: "Outdoors",
+        description: "A stunning 150-acre public garden in Sumter featuring eight species of swans, Japanese irises, and cypress-lined walking paths — one of South Carolina's hidden gems.",
+      },
+      {
+        name: "Sumter Opera House",
+        category: "Entertainment",
+        description: "A beautifully restored 1893 performing arts venue hosting concerts, plays, and community events in downtown Sumter.",
+      },
+      {
+        name: "Poinsett State Park",
+        category: "Outdoors",
+        description: "A scenic state park along the Wateree River with hiking, fishing, and camping. Named for Joel Poinsett, it sits where the mountains meet the coast geologically.",
+      },
+      {
+        name: "La Piazza Italian Restaurant",
+        category: "Dining",
+        description: "A locally-owned Sumter favorite serving authentic Italian dishes in a cozy setting. A go-to date night spot for Shaw families.",
+      },
+      {
+        name: "Manchester State Forest",
+        category: "Outdoors",
+        description: "Over 25,000 acres of pine forest south of Sumter with hunting, horseback riding, mountain biking, and the popular Killer Bunny mountain bike trail system.",
+      },
+      {
+        name: "The Diner",
+        category: "Dining",
+        description: "A classic American diner on Broad Street in Sumter known for hearty breakfasts and comfort food. A popular gathering spot since the 1950s.",
+      },
+    ],
+    housing: {
+      priceRange: "$140,000–$260,000",
+      rentRange: "$800–$1,300/mo",
+      marketContext: "Sumter offers very affordable housing with BAH covering most options and leaving room to spare. The market is stable due to Shaw's large military population. Columbia suburbs cost more but offer better schools and amenities.",
+      hotNeighborhoods: ["Dalzell", "West Sumter", "Lugoff"],
+    },
+  },
+  "sheppard-afb": {
+    neighborhoods: [
+      {
+        name: "Wichita Falls (Southwest)",
+        description: "The southwest side of Wichita Falls near Midwestern State University has established neighborhoods, good restaurants, and a college-town vibe. Popular with permanent party and instructors.",
+        commute: "10–15 min to base",
+        tags: ["Suburban", "Walkable", "College town"],
+      },
+      {
+        name: "Burkburnett",
+        description: "A small city just north of Sheppard AFB with affordable housing, a small-town feel, and very quick base access. A top choice for military families on a budget.",
+        commute: "10–15 min to base",
+        tags: ["Affordable", "Family-friendly", "Military community"],
+      },
+      {
+        name: "Wichita Falls (Central/Kell District)",
+        description: "The Kell Boulevard corridor offers newer retail, restaurants, and suburban neighborhoods with easy access to both the base and city amenities.",
+        commute: "15–20 min to base",
+        tags: ["Suburban", "Shopping", "Family-friendly"],
+      },
+    ],
+    schools: {
+      district: "Wichita Falls Independent School District",
+      context: "WFISD is the primary district serving the area, with Burkburnett ISD also serving families north of base. Both districts have strong ties to the military community and offer open enrollment for military-connected students.",
+      highlights: [
+        "Rider High School and Wichita Falls High School both offer strong athletics and AP programs",
+        "Burkburnett ISD is well-regarded for smaller class sizes and community feel",
+        "WFISD's Career Education Center offers hands-on technical training for high schoolers",
+      ],
+    },
+    activities: [
+      {
+        name: "Wichita Falls Brewing Company",
+        category: "Dining",
+        description: "A popular downtown craft brewery with locally-brewed beers and a lively taproom. A favorite weekend gathering spot for Sheppard personnel.",
+      },
+      {
+        name: "Lucy Park",
+        category: "Outdoors",
+        description: "A scenic riverside park along the Wichita River with hiking trails, swimming pool, playgrounds, and picnic areas. The park's waterfall is a local landmark.",
+      },
+      {
+        name: "The Wichita Theatre",
+        category: "Entertainment",
+        description: "A restored 1908 vaudeville theatre hosting Broadway-style productions, concerts, and community events in historic downtown.",
+      },
+      {
+        name: "Lake Arrowhead State Park",
+        category: "Outdoors",
+        description: "A state park southeast of Wichita Falls with camping, swimming, fishing, mountain biking, and an 18-hole disc golf course on the shores of Lake Arrowhead.",
+      },
+      {
+        name: "The Gypsy Kit",
+        category: "Dining",
+        description: "A trendy downtown restaurant and bar serving creative American cuisine with global influences. Popular for date nights and special occasions.",
+      },
+    ],
+    housing: {
+      priceRange: "$130,000–$250,000",
+      rentRange: "$800–$1,300/mo",
+      marketContext: "Wichita Falls is one of the most affordable housing markets in Texas. BAH covers most options comfortably. The large student population at Sheppard creates steady rental demand but prices remain very reasonable.",
+      hotNeighborhoods: ["Southwest Wichita Falls", "Burkburnett", "Kell West"],
+    },
+  },
+  "tinker-afb": {
+    neighborhoods: [
+      {
+        name: "Midwest City",
+        description: "The city directly adjacent to Tinker AFB with a wide range of housing from affordable to mid-range. Rose State College and a strong retail corridor make it the default choice for many Tinker families.",
+        commute: "5–10 min to base",
+        tags: ["Military community", "Affordable", "Suburban"],
+      },
+      {
+        name: "Moore",
+        description: "A popular suburb south of Oklahoma City with excellent schools (Moore Public Schools), new construction, and a family-oriented community. Warren Theatre and major retail nearby.",
+        commute: "20–25 min to base",
+        tags: ["Family-friendly", "Suburban", "New construction"],
+      },
+      {
+        name: "Norman",
+        description: "Home to the University of Oklahoma, Norman offers a vibrant college-town atmosphere, excellent dining, and strong schools. A longer commute but worth it for quality of life.",
+        commute: "25–35 min to base",
+        tags: ["College town", "Walkable", "Family-friendly"],
+      },
+    ],
+    schools: {
+      district: "Mid-Del Schools / Moore Public Schools",
+      context: "Mid-Del Schools serve Midwest City and Del City directly near base. Moore Public Schools, further south, are generally higher-rated and draw many military families willing to commute. Norman Public Schools near OU are also excellent.",
+      highlights: [
+        "Moore Public Schools consistently rank among the top districts in the OKC metro",
+        "Mid-Del Schools have strong military family support programs and JROTC",
+        "Norman Public Schools offer International Baccalaureate and advanced STEM programs",
+      ],
+    },
+    activities: [
+      {
+        name: "Oklahoma City National Memorial & Museum",
+        category: "Attraction",
+        description: "A powerful memorial honoring the 168 victims of the 1995 bombing. The reflecting pool, empty chairs, and Survivor Tree are profoundly moving.",
+      },
+      {
+        name: "Bricktown District",
+        category: "Entertainment",
+        description: "OKC's revitalized entertainment district with restaurants, bars, a riverwalk, minor-league baseball, and a comedy club. The heart of OKC nightlife.",
+      },
+      {
+        name: "Lake Thunderbird State Park",
+        category: "Outdoors",
+        description: "A large reservoir between Norman and Midwest City with boating, fishing, swimming, hiking, and mountain biking trails. A popular weekend escape.",
+      },
+      {
+        name: "Cattlemen's Steakhouse",
+        category: "Dining",
+        description: "An Oklahoma City institution in Stockyards City since 1910, serving legendary steaks in a historic setting. A must-visit for any carnivore at Tinker.",
+      },
+      {
+        name: "OU Football at Gaylord Family Stadium",
+        category: "Entertainment",
+        description: "Watching the Sooners play on a fall Saturday in Norman is a quintessential Oklahoma experience. Military appreciation games offer discounted tickets.",
+      },
+      {
+        name: "Martin Park Nature Center",
+        category: "Outdoors",
+        description: "A 140-acre urban nature preserve in northwest OKC with trails through prairie, woodland, and wetland habitats. Free admission and great for families.",
+      },
+    ],
+    housing: {
+      priceRange: "$170,000–$330,000",
+      rentRange: "$900–$1,500/mo",
+      marketContext: "The OKC metro is one of the most affordable major metro areas in the country. Midwest City offers the most convenient and budget-friendly options. Moore and Norman command premiums for schools and amenities but remain very affordable by national standards.",
+      hotNeighborhoods: ["Moore", "Midwest City", "Del City"],
+    },
+  },
+  "travis-afb": {
+    neighborhoods: [
+      {
+        name: "Fairfield",
+        description: "The city immediately outside Travis AFB with diverse neighborhoods, good shopping, and quick base access. Offers a mix of affordable and mid-range housing options.",
+        commute: "5–10 min to base",
+        tags: ["Military community", "Suburban", "Diverse"],
+      },
+      {
+        name: "Vacaville",
+        description: "A growing city north of Fairfield with excellent schools, premium outlet shopping, charming downtown, and a slightly more upscale feel. Very popular with Travis families.",
+        commute: "15–20 min to base",
+        tags: ["Family-friendly", "Suburban", "Shopping"],
+      },
+      {
+        name: "Dixon",
+        description: "A small agricultural town west of Travis with a quiet, rural atmosphere, affordable homes, and a tight-knit community. Great for families wanting space and a slower pace.",
+        commute: "15–20 min to base",
+        tags: ["Rural", "Affordable", "Family-friendly"],
+      },
+    ],
+    schools: {
+      district: "Fairfield-Suisun Unified School District / Vacaville Unified",
+      context: "Vacaville Unified is generally the higher-performing district and draws many military families. Fairfield-Suisun Unified serves the areas closest to base and has active military liaison programs. Both districts offer strong support for military-connected students.",
+      highlights: [
+        "Vacaville High School and Will C. Wood High School are well-regarded in Solano County",
+        "Fairfield-Suisun schools have robust programs for military-connected students",
+        "Travis Unified School District, on base, serves on-base housing families with small class sizes",
+      ],
+    },
+    activities: [
+      {
+        name: "Jelly Belly Factory Tour",
+        category: "Attraction",
+        description: "The Jelly Belly headquarters in Fairfield offers free factory tours, a candy store, and seasonal events. A fun family outing and a unique local landmark.",
+      },
+      {
+        name: "Napa Valley Wine Country",
+        category: "Outdoors",
+        description: "World-class wineries are just 30 minutes north in Napa and Sonoma. Tasting tours, scenic drives, and gourmet dining make this a top perk of Travis duty.",
+      },
+      {
+        name: "San Francisco Day Trips",
+        category: "Attraction",
+        description: "The Golden Gate Bridge, Fisherman's Wharf, Alcatraz, and Chinatown are all about 60 minutes southwest. One of the best weekend day-trip cities in the world.",
+      },
+      {
+        name: "Bud's Pub & Grill",
+        category: "Dining",
+        description: "A Fairfield staple with hearty American fare, craft beers, and a welcoming atmosphere. Known for burgers and a popular spot with Travis personnel.",
+      },
+      {
+        name: "Suisun Valley Farms & Orchards",
+        category: "Outdoors",
+        description: "Local farms in the Suisun Valley offer u-pick produce, farm stands, and seasonal festivals. A taste of California agriculture minutes from base.",
+      },
+      {
+        name: "Sacramento River Delta",
+        category: "Outdoors",
+        description: "The nearby delta offers world-class bass fishing, kayaking, boating, and scenic waterway exploration. A hidden gem for outdoor enthusiasts.",
+      },
+    ],
+    housing: {
+      priceRange: "$420,000–$680,000",
+      rentRange: "$1,800–$2,800/mo",
+      marketContext: "Solano County is significantly more affordable than San Francisco or Napa but still reflects California pricing. BAH is set high for the area but housing costs remain tight. Fairfield and Suisun City offer the best value; Vacaville is pricier but has better schools.",
+      hotNeighborhoods: ["Vacaville", "Fairfield", "Suisun City"],
+    },
+  },
+  "tyndall-afb": {
+    neighborhoods: [
+      {
+        name: "Panama City Beach",
+        description: "The famous beach town west of Tyndall with sugar-white sand, resort amenities, restaurants, and a lively social scene. Popular with single airmen and young couples.",
+        commute: "25–35 min to base",
+        tags: ["Beach", "Nightlife", "Tourist area"],
+      },
+      {
+        name: "Lynn Haven",
+        description: "A residential community north of Panama City with affordable homes, good schools, and a quiet family atmosphere. Recovering well post-Hurricane Michael with new construction.",
+        commute: "15–20 min to base",
+        tags: ["Family-friendly", "Suburban", "Affordable"],
+      },
+      {
+        name: "Callaway / Parker",
+        description: "Communities east of Panama City closest to Tyndall with the shortest commutes and most affordable housing options. Significant rebuilding since Hurricane Michael has brought newer homes.",
+        commute: "5–15 min to base",
+        tags: ["Affordable", "Military community", "New construction"],
+      },
+    ],
+    schools: {
+      district: "Bay County School District",
+      context: "Bay County schools serve the entire Panama City area. The district has invested heavily in rebuilding and upgrading facilities since Hurricane Michael in 2018. Several schools have been rebuilt with modern facilities.",
+      highlights: [
+        "Mosley High School in Lynn Haven is a top-performing school in the district",
+        "Bay County offers a virtual school option and multiple choice/magnet programs",
+        "A.D. Harris Learning Village and other rebuilt schools feature state-of-the-art facilities",
+      ],
+    },
+    activities: [
+      {
+        name: "St. Andrews State Park",
+        category: "Outdoors",
+        description: "A stunning state park on a peninsula with pristine beaches, snorkeling, fishing, and a ferry to Shell Island. Consistently rated one of America's best beaches.",
+      },
+      {
+        name: "Shell Island",
+        category: "Outdoors",
+        description: "An undeveloped 7-mile barrier island accessible by ferry or boat with crystal-clear water, wild dolphins, and untouched beaches. A Tyndall family favorite.",
+      },
+      {
+        name: "Pier Park",
+        category: "Shopping",
+        description: "A massive open-air shopping and entertainment complex on Panama City Beach with retail, restaurants, an IMAX theater, and a SkyWheel Ferris wheel.",
+      },
+      {
+        name: "Finns Island Style Grub",
+        category: "Dining",
+        description: "A popular casual beachside restaurant serving fresh seafood, tacos, and tropical cocktails with a laid-back Panhandle vibe.",
+      },
+      {
+        name: "Scuba and Diving Charters",
+        category: "Outdoors",
+        description: "Panama City is known as the 'Wreck Diving Capital of the South' with numerous artificial reefs and shipwrecks. Multiple dive operators cater to all experience levels.",
+      },
+    ],
+    housing: {
+      priceRange: "$220,000–$400,000",
+      rentRange: "$1,200–$1,900/mo",
+      marketContext: "The Panama City market has rebounded strongly since Hurricane Michael. New construction is plentiful but prices have risen. Beach properties command a premium. Lynn Haven and Callaway offer the best value for military families.",
+      hotNeighborhoods: ["Lynn Haven", "Callaway", "Panama City Beach"],
+    },
+  },
+  "vance-afb": {
+    neighborhoods: [
+      {
+        name: "Enid (West Side)",
+        description: "The western neighborhoods of Enid offer newer subdivisions, proximity to Oakwood Mall, and the city's primary retail and dining corridor. A popular choice for student pilots and families.",
+        commute: "10–15 min to base",
+        tags: ["Suburban", "Family-friendly", "Shopping"],
+      },
+      {
+        name: "Enid (Downtown/Historic)",
+        description: "Enid's historic downtown area has charming older homes, a revitalizing town square, and a walkable feel. Affordable and full of character.",
+        commute: "10–15 min to base",
+        tags: ["Historic", "Walkable", "Affordable"],
+      },
+      {
+        name: "Enid (South Side / Meadowlake)",
+        description: "The south side near Meadowlake Park offers established homes, quiet tree-lined streets, and proximity to one of the city's best parks. A solid family neighborhood.",
+        commute: "10–15 min to base",
+        tags: ["Family-friendly", "Parks", "Affordable"],
+      },
+    ],
+    schools: {
+      district: "Enid Public Schools",
+      context: "Enid Public Schools is the primary district serving the area. It is a mid-sized Oklahoma district with solid academic programs and strong athletics. The community is very welcoming to military families in the student pilot pipeline.",
+      highlights: [
+        "Enid High School offers AP courses, strong athletics, and career-tech programs",
+        "Longfellow Middle School and surrounding elementaries serve most military neighborhoods",
+        "Oklahoma Bible Academy and St. Joseph Catholic School offer private alternatives",
+      ],
+    },
+    activities: [
+      {
+        name: "Leonardo's Discovery Warehouse & Adventure Quest",
+        category: "Attraction",
+        description: "A hands-on children's museum and ropes course in downtown Enid. A surprisingly impressive attraction for a small city and a family favorite.",
+      },
+      {
+        name: "Meadowlake Park",
+        category: "Outdoors",
+        description: "Enid's premier park with a golf course, fishing lake, swimming pool, disc golf, playgrounds, and miles of walking trails. The community's outdoor hub.",
+      },
+      {
+        name: "Enid Brewing Company",
+        category: "Dining",
+        description: "A downtown craft brewery with rotating taps and a relaxed atmosphere. A social hub for Vance student pilots and permanent party alike.",
+      },
+      {
+        name: "Great Salt Plains State Park",
+        category: "Outdoors",
+        description: "A unique state park about 45 minutes north where visitors can dig for hourglass-shaped selenite crystals on the salt flats. A one-of-a-kind Oklahoma experience.",
+      },
+      {
+        name: "Jumbo's",
+        category: "Dining",
+        description: "A legendary Enid diner known for giant portions and homestyle cooking. The chicken-fried steak is a rite of passage for every Vance student pilot.",
+      },
+    ],
+    housing: {
+      priceRange: "$110,000–$220,000",
+      rentRange: "$700–$1,100/mo",
+      marketContext: "Enid is among the most affordable duty stations in the Air Force. BAH far exceeds typical housing costs, allowing significant savings. The market is stable with steady demand from Vance personnel.",
+      hotNeighborhoods: ["West Enid", "Meadowlake Area", "South Enid"],
+    },
+  },
+  "whiteman-afb": {
+    neighborhoods: [
+      {
+        name: "Knob Noster",
+        description: "The small town immediately outside Whiteman's gate with affordable housing, a quaint downtown, and a tight-knit military-civilian community. Most convenient option for base access.",
+        commute: "5 min to base",
+        tags: ["Military community", "Affordable", "Small town"],
+      },
+      {
+        name: "Warrensburg",
+        description: "Home to the University of Central Missouri, Warrensburg offers more dining, shopping, and rental options than Knob Noster. A popular choice for families wanting more amenities.",
+        commute: "15–20 min to base",
+        tags: ["College town", "Family-friendly", "Suburban"],
+      },
+      {
+        name: "Lee's Summit",
+        description: "A thriving Kansas City suburb with excellent schools, upscale shopping, and a vibrant downtown. A longer commute but offers big-city amenities and strong property values.",
+        commute: "45–55 min to base",
+        tags: ["Suburban", "Family-friendly", "Upscale"],
+      },
+    ],
+    schools: {
+      district: "Knob Noster R-VIII / Warrensburg R-VI",
+      context: "Knob Noster R-VIII is a small district with strong military family integration and personalized attention. Warrensburg R-VI is larger with more program offerings. Families willing to commute from Lee's Summit access top-rated Lee's Summit R-VII schools.",
+      highlights: [
+        "Knob Noster schools have very small class sizes and strong military family support",
+        "Warrensburg High School offers diverse AP and extracurricular programs",
+        "Lee's Summit R-VII is consistently rated among Missouri's best districts",
+      ],
+    },
+    activities: [
+      {
+        name: "Knob Noster State Park",
+        category: "Outdoors",
+        description: "A scenic state park adjacent to base with hiking, camping, fishing, and one of Missouri's few remaining examples of eastern woodlands prairie. The base's backyard retreat.",
+      },
+      {
+        name: "Kansas City BBQ Trail",
+        category: "Dining",
+        description: "World-famous barbecue is about an hour west. Joe's Kansas City, Q39, and Gates BBQ are essential stops for any Whiteman newcomer.",
+      },
+      {
+        name: "National World War I Museum",
+        category: "Attraction",
+        description: "Located in Kansas City at Liberty Memorial, this is the nation's leading WWI museum with immersive exhibits and a 217-foot tower with panoramic city views.",
+      },
+      {
+        name: "Bushwhacker Lake Conservation Area",
+        category: "Outdoors",
+        description: "A popular fishing and hunting spot near Knob Noster with bass and catfish in the 155-acre lake, plus hiking trails through Ozark-edge woodlands.",
+      },
+      {
+        name: "Arrowhead Stadium / Kauffman Stadium",
+        category: "Entertainment",
+        description: "Home of the Kansas City Chiefs and Royals, about an hour from base. Military appreciation events and group ticket deals make game days accessible.",
+      },
+      {
+        name: "Fitter's 5th Street Pub",
+        category: "Dining",
+        description: "A beloved Warrensburg bar and grill popular with Whiteman personnel. Good burgers, cold beer, and a laid-back college-town atmosphere.",
+      },
+    ],
+    housing: {
+      priceRange: "$140,000–$260,000",
+      rentRange: "$750–$1,200/mo",
+      marketContext: "Knob Noster and Warrensburg are very affordable, with BAH covering most options easily. The market is heavily influenced by Whiteman personnel. Lee's Summit is considerably pricier but offers superior schools and Kansas City access.",
+      hotNeighborhoods: ["Knob Noster", "Warrensburg", "Lee's Summit"],
+    },
+  },
+  "wright-patterson-afb": {
+    neighborhoods: [
+      {
+        name: "Beavercreek",
+        description: "A highly desirable suburb directly adjacent to Wright-Patterson with top-rated schools, abundant retail, and a family-friendly atmosphere. The default choice for many WPAFB families.",
+        commute: "5–15 min to base",
+        tags: ["Family-friendly", "Suburban", "Top schools"],
+      },
+      {
+        name: "Fairborn",
+        description: "The city immediately outside the base's main gates, home to Wright State University. Offers affordable housing and quick base access, with a college-town feel.",
+        commute: "5–10 min to base",
+        tags: ["Affordable", "College town", "Military community"],
+      },
+      {
+        name: "Centerville",
+        description: "An upscale suburb south of Dayton with excellent Centerville Schools, a charming downtown, and established neighborhoods. Popular with senior officers and GS civilians.",
+        commute: "15–25 min to base",
+        tags: ["Suburban", "Top schools", "Upscale"],
+      },
+    ],
+    schools: {
+      district: "Beavercreek City Schools / Centerville City Schools",
+      context: "The Dayton suburbs offer some of Ohio's best school districts. Beavercreek and Centerville are both highly rated and draw the majority of WPAFB families. Fairborn City Schools serve the area closest to base and have strong military family programs.",
+      highlights: [
+        "Beavercreek High School is one of Ohio's top-performing public high schools",
+        "Centerville Schools are consistently rated Excellent by the Ohio Department of Education",
+        "Multiple STEM magnet programs available through the Montgomery County ESC",
+      ],
+    },
+    activities: [
+      {
+        name: "National Museum of the United States Air Force",
+        category: "Attraction",
+        description: "The world's largest and oldest military aviation museum, located on Wright-Patterson. Over 350 aircraft and missiles with free admission — a must-see for anyone at WPAFB.",
+      },
+      {
+        name: "Dayton Aviation Heritage National Historical Park",
+        category: "Attraction",
+        description: "Explore the Wright Brothers' bicycle shop, Huffman Prairie Flying Field, and other sites where powered flight was born. Dayton's greatest historical claim.",
+      },
+      {
+        name: "Yellow Springs",
+        category: "Outdoors",
+        description: "A charming artsy village near base with the stunning Glen Helen Nature Preserve, John Bryan State Park, and unique shops and restaurants. A favorite weekend destination.",
+      },
+      {
+        name: "2nd Street Market",
+        category: "Shopping",
+        description: "A year-round indoor market in downtown Dayton with local produce, baked goods, artisan crafts, and prepared foods. A Saturday morning tradition.",
+      },
+      {
+        name: "Wheat Penny Oven & Bar",
+        category: "Dining",
+        description: "A celebrated Dayton restaurant serving creative wood-fired pizzas and craft cocktails. Consistently ranked among the best restaurants in the region.",
+      },
+      {
+        name: "Great Miami River Trail",
+        category: "Outdoors",
+        description: "Part of the nation's largest paved trail network, with over 340 miles of connected paths for biking, running, and walking throughout the Miami Valley.",
+      },
+    ],
+    housing: {
+      priceRange: "$200,000–$380,000",
+      rentRange: "$1,000–$1,700/mo",
+      marketContext: "The Dayton market is affordable compared to national averages, and WPAFB BAH rates cover the area well. Beavercreek is the sweet spot of price, schools, and convenience. Centerville is pricier but prestigious. Fairborn is the most budget-friendly.",
+      hotNeighborhoods: ["Beavercreek", "Centerville", "Fairborn"],
+    },
+  },
 };
 
 export default airForceDetails;
