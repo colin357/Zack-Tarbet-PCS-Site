@@ -26,7 +26,7 @@ export default function HomePage() {
       <div style={{ backgroundColor: "#060c18", borderBottom: "1px solid #1f2937" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "1.125rem 1.5rem", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0 3rem" }}>
           {[
-            { value: "230+", label: "Military Installations" },
+            { value: "140+", label: "Military Installations" },
             { value: "$0 Down", label: "VA Home Loans" },
             { value: "All 50 States", label: "Licensed" },
             { value: "NMLS# 2040562", label: "VA Loan Specialist" },
