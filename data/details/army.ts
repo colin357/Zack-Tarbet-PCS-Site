@@ -281,11 +281,11 @@ const armyDetails: Record<string, BaseDetail> = {
     },
   },
 
-  "fort-cavazos": {
+  "fort-hood": {
     neighborhoods: [
       {
         name: "Killeen (Trimmier Road / South Fort Hood Street area)",
-        description: "The primary off-post community for Fort Cavazos soldiers, with dense military-oriented housing, apartments, and retail.",
+        description: "The primary off-post community for Fort Hood soldiers, with dense military-oriented housing, apartments, and retail.",
         commute: "5–15 min to main gate",
         tags: ["Military community", "Affordable", "Suburban"],
       },
@@ -304,7 +304,7 @@ const armyDetails: Record<string, BaseDetail> = {
     ],
     schools: {
       district: "Killeen Independent School District",
-      context: "Killeen ISD is one of the most diverse districts in Texas, heavily influenced by Fort Cavazos. It has experience supporting military families with PCS transitions.",
+      context: "Killeen ISD is one of the most diverse districts in Texas, heavily influenced by Fort Hood. It has experience supporting military families with PCS transitions.",
       highlights: [
         "Shoemaker High School and Killeen High School are the main campuses serving base families",
         "District has dedicated military family liaisons and flexible enrollment processes",
@@ -320,7 +320,7 @@ const armyDetails: Record<string, BaseDetail> = {
       {
         name: "3rd Cavalry Museum",
         category: "Attraction",
-        description: "On-post museum documenting the history of the 3rd Armored Cavalry Regiment and Fort Hood/Cavazos from establishment to present.",
+        description: "On-post museum documenting the history of the 3rd Armored Cavalry Regiment and Fort Hood from establishment to present.",
       },
       {
         name: "Izzy's Burgers Cafe & Bar",
@@ -335,7 +335,7 @@ const armyDetails: Record<string, BaseDetail> = {
       {
         name: "Killeen Mall",
         category: "Shopping",
-        description: "Primary retail hub for the Killeen-Fort Cavazos area with major stores and a military discount program at many tenants.",
+        description: "Primary retail hub for the Killeen-Fort Hood area with major stores and a military discount program at many tenants.",
       },
       {
         name: "Belton Lake",
@@ -1121,17 +1121,17 @@ const armyDetails: Record<string, BaseDetail> = {
     },
   },
 
-  "fort-liberty": {
+  "fort-bragg": {
     neighborhoods: [
       {
         name: "Hope Mills",
-        description: "Suburban community southwest of Fayetteville with affordable single-family homes and easy access to Fort Liberty's gates.",
+        description: "Suburban community southwest of Fayetteville with affordable single-family homes and easy access to Fort Bragg's gates.",
         commute: "10–15 min to main gate",
         tags: ["Military community", "Affordable", "Suburban"],
       },
       {
         name: "Raeford",
-        description: "Small city west of the base in Hoke County, known for very affordable housing and proximity to the Bragg/Liberty back gates.",
+        description: "Small city west of the base in Hoke County, known for very affordable housing and proximity to the Bragg back gates.",
         commute: "20–25 min to main gate",
         tags: ["Affordable", "Rural", "Military community"],
       },
@@ -1144,7 +1144,7 @@ const armyDetails: Record<string, BaseDetail> = {
     ],
     schools: {
       district: "Cumberland County Schools",
-      context: "Cumberland County Schools serves Fayetteville and Fort Liberty — one of the most military-diverse districts in the nation with extensive transition support.",
+      context: "Cumberland County Schools serves Fayetteville and Fort Bragg — one of the most military-diverse districts in the nation with extensive transition support.",
       highlights: [
         "District has over a dozen Purple Star school designations",
         "Terry Sanford High School and Jack Britt High School are the top-rated campuses",
@@ -1261,7 +1261,7 @@ const armyDetails: Record<string, BaseDetail> = {
     },
   },
 
-  "fort-moore": {
+  "fort-benning": {
     neighborhoods: [
       {
         name: "Phenix City, AL",
@@ -1271,20 +1271,20 @@ const armyDetails: Record<string, BaseDetail> = {
       },
       {
         name: "North Columbus / Midland",
-        description: "Northern Columbus suburbs with newer construction, top-rated Muscogee County schools, and easy access to Fort Moore's main gate.",
+        description: "Northern Columbus suburbs with newer construction, top-rated Muscogee County schools, and easy access to Fort Benning's main gate.",
         commute: "10–20 min to main gate",
         tags: ["Suburban", "Family-friendly", "New construction"],
       },
       {
         name: "Wynton Road / South Columbus",
-        description: "South Columbus communities closest to Fort Moore's main gate with affordable, established neighborhoods and high military density.",
+        description: "South Columbus communities closest to Fort Benning's main gate with affordable, established neighborhoods and high military density.",
         commute: "5–10 min to main gate",
         tags: ["Military community", "Affordable", "Suburban"],
       },
     ],
     schools: {
       district: "Muscogee County School District",
-      context: "MCSD serves Columbus and is experienced with the Fort Moore military family population, with multiple Purple Star schools and an active military liaison program.",
+      context: "MCSD serves Columbus and is experienced with the Fort Benning military family population, with multiple Purple Star schools and an active military liaison program.",
       highlights: [
         "Northside High School consistently ranks as MCSD's highest-performing campus",
         "Columbus High School is the magnet academic school with IB programming",

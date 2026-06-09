@@ -88,14 +88,14 @@ export default function FortCarsonGuidePage() {
               Get VA Loan Pre-Approval
               <ArrowRight size={14} />
             </Link>
-            <a href="tel:+13037287690" style={{
+            <a href="tel:+17192592246" style={{
               display: "inline-flex", alignItems: "center", gap: "0.5rem",
               backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)",
               color: "#cbd5e1", padding: "0.75rem 1.25rem",
               borderRadius: "8px", fontSize: "0.875rem", fontWeight: 600, textDecoration: "none",
             }}>
               <Phone size={14} />
-              (303) 728-7690
+              (719) 259-2246
             </a>
           </div>
         </div>
@@ -930,14 +930,14 @@ export default function FortCarsonGuidePage() {
                 Get VA Pre-Approval
                 <ArrowRight size={16} />
               </Link>
-              <a href="tel:+13037287690" style={{
+              <a href="tel:+17192592246" style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)",
                 color: "#cbd5e1", padding: "0.875rem 1.5rem",
                 borderRadius: "8px", fontSize: "1rem", fontWeight: 600, textDecoration: "none",
               }}>
                 <Phone size={16} />
-                (303) 728-7690
+                (719) 259-2246
               </a>
             </div>
             <p style={{ color: "#4b5563", fontSize: "0.8rem", marginTop: "1rem" }}>

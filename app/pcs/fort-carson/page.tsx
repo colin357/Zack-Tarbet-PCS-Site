@@ -276,12 +276,12 @@ export default function FortCarsonLandingPage() {
               <p style={{ color: "#6b7280", fontSize: "0.8rem", margin: "0 0 0.5rem" }}>
                 Prefer to talk? Call us directly:
               </p>
-              <a href="tel:+13037287690" style={{
+              <a href="tel:+17192592246" style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 color: "#f5c518", textDecoration: "none", fontWeight: 700, fontSize: "1rem",
               }}>
                 <Phone size={16} />
-                (303) 728-7690
+                (719) 259-2246
               </a>
             </div>
           </div>

@@ -320,11 +320,11 @@ export default async function BaseDetailPage({ params }: Props) {
               }}>
                 Get Pre-Approved
               </Link>
-              <a href="tel:+13037287690" style={{
+              <a href="tel:+17192592246" style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
                 color: "#475569", textDecoration: "none", fontSize: "0.8rem",
               }}>
-                <Phone size={13} color="#64748b" /> (303) 728-7690
+                <Phone size={13} color="#64748b" /> (719) 259-2246
               </a>
             </div>
 

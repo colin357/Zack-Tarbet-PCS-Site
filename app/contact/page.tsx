@@ -70,7 +70,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label style={labelStyle}>PHONE</label>
-                    <input name="phone" value={form.phone} onChange={handleChange} type="tel" placeholder="(303) 728-7690" style={inputStyle} />
+                    <input name="phone" value={form.phone} onChange={handleChange} type="tel" placeholder="(719) 259-2246" style={inputStyle} />
                   </div>
                 </div>
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label style={labelStyle}>GAINING INSTALLATION</label>
-                    <input name="base" value={form.base} onChange={handleChange} placeholder="Fort Liberty, NC" style={inputStyle} />
+                    <input name="base" value={form.base} onChange={handleChange} placeholder="Fort Bragg, NC" style={inputStyle} />
                   </div>
                 </div>
 
@@ -138,11 +138,11 @@ export default function ContactPage() {
                 I help military families navigate the VA loan process during PCS moves. Fast responses, clear answers, no runaround.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                <a href="tel:+13037287690" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", textDecoration: "none", fontSize: "0.875rem" }}>
+                <a href="tel:+17192592246" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", textDecoration: "none", fontSize: "0.875rem" }}>
                   <div style={{ width: "36px", height: "36px", backgroundColor: "rgba(245, 197, 24, 0.1)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <Phone size={16} color="#f5c518" />
                   </div>
-                  (303) 728-7690
+                  (719) 259-2246
                 </a>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#d1d5db", fontSize: "0.875rem" }}>
                   <div style={{ width: "36px", height: "36px", backgroundColor: "rgba(245, 197, 24, 0.1)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
