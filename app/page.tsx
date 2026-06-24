@@ -6,6 +6,9 @@ import BaseCard from "@/components/installations/BaseCard";
 import BaseMapSection from "@/components/home/BaseMapSection";
 import FAQSection from "@/components/home/FAQSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import JsonLd from "@/components/seo/JsonLd";
+import { homeFaqs } from "@/data/faqs";
+import { faqPageSchema, serviceSchema } from "@/data/site";
 
 const featuredSlugs = [
   "fort-bragg", "camp-lejeune", "joint-base-lewis-mcchord",
@@ -19,6 +22,18 @@ const featuredBases = featuredSlugs
 export default function HomePage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          faqPageSchema(homeFaqs),
+          serviceSchema({
+            name: "VA Home Loans for Military Families",
+            serviceType: "VA mortgage lending",
+            description:
+              "VA home loan assistance for active-duty service members, veterans, and surviving spouses — $0 down, no PMI, fast PCS-ready closings in all 50 states.",
+            path: "/va-home-loans",
+          }),
+        ]}
+      />
       {/* 1. Hero — dark, text-only */}
       <Hero />
 

@@ -2,10 +2,39 @@ import type { Metadata } from "next";
 import { bases, branches, type Branch, branchColors } from "@/data/bases";
 import BaseCard from "@/components/installations/BaseCard";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, absoluteUrl } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Military Installations | Heroes Home Network",
+  title: "Military Installations",
   description: "Browse all U.S. military installations by branch. Find base information, local housing, and VA loan resources for your next PCS move.",
+  alternates: { canonical: "/installations" },
+  openGraph: {
+    title: "Military Installations | Heroes Home Network",
+    description: "Browse all U.S. military installations by branch. Find base information, local housing, and VA loan resources for your next PCS move.",
+    url: "/installations",
+    type: "website",
+  },
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "U.S. Military Installations Directory",
+  description: "Directory of U.S. military installations with neighborhood, school, housing, and VA loan resources for PCS moves.",
+  url: absoluteUrl("/installations"),
+  isPartOf: { "@id": absoluteUrl("/#website") },
+  about: { "@id": absoluteUrl("/#organization") },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: bases.length,
+    itemListElement: bases.map((base, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: `${base.name} — ${base.city}, ${base.state}`,
+      url: absoluteUrl(`/installations/${base.slug}`),
+    })),
+  },
 };
 
 interface Props {
@@ -33,6 +62,15 @@ export default async function InstallationsPage({ searchParams }: Props) {
 
   return (
     <div style={{ backgroundColor: "#f8fafc", minHeight: "100vh" }}>
+      <JsonLd
+        data={[
+          collectionSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Installations", path: "/installations" },
+          ]),
+        ]}
+      />
       {/* Header — dark */}
       <section style={{ backgroundColor: "#0f172a", padding: "3rem 1.5rem 2.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>

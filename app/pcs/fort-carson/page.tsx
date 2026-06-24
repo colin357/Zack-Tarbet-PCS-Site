@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Shield, Phone, CheckCircle, MapPin, Mountain, Star, ArrowRight } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/data/site";
 
 export default function FortCarsonLandingPage() {
   const router = useRouter();
@@ -53,6 +55,12 @@ export default function FortCarsonLandingPage() {
 
   return (
     <div style={{ backgroundColor: "#0a0f1e" }}>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "PCS to Fort Carson", path: "/pcs/fort-carson" },
+        ])}
+      />
 
       {/* Hero Section */}
       <section style={{

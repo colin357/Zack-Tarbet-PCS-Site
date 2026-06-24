@@ -8,6 +8,8 @@ import { getBaseDetail } from "@/data/baseDetails";
 import type { LocalActivity } from "@/data/baseDetails";
 import BaseCard from "@/components/installations/BaseCard";
 import { getBaseImage } from "@/data/baseImages";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, absoluteUrl } from "@/data/site";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,9 +23,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const base = getBaseBySlug(slug);
   if (!base) return { title: "Installation Not Found" };
+  const path = `/installations/${base.slug}`;
+  const title = `${base.name} — PCS, Housing & VA Loans in ${base.city}, ${base.state}`;
+  // Lead with concrete, answerable detail; keep the meta description ~1 sentence.
+  const description = `PCS guide to ${base.name} in ${base.city}, ${base.state}: neighborhoods, schools, local activities, housing costs, and VA home loan resources for military families.`;
   return {
-    title: `${base.name} | Heroes Home Network`,
-    description: `${base.description} Find neighborhoods, schools, local activities, and VA home loan resources near ${base.name} in ${base.city}, ${base.state}.`,
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${title} | Heroes Home Network`,
+      description,
+      url: path,
+      type: "article",
+    },
   };
 }
 
@@ -58,9 +71,54 @@ export default async function BaseDetailPage({ params }: Props) {
   const color = branchColors[base.branch];
   const relatedBases = getBasesByBranch(base.branch).filter(b => b.slug !== base.slug).slice(0, 3);
   const detail = getBaseDetail(slug);
+  const path = `/installations/${base.slug}`;
+
+  // Place node describes the installation itself (geo + location), letting
+  // answer engines associate this page with a real-world military base.
+  const placeSchema = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name: base.name,
+    description: base.description,
+    url: absoluteUrl(path),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: base.city,
+      addressRegion: base.state,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: base.lat,
+      longitude: base.lng,
+    },
+    ...(detail
+      ? {
+          // Surface concrete housing figures as a structured offer summary.
+          additionalProperty: [
+            { "@type": "PropertyValue", name: "Median home price", value: detail.housing.priceRange },
+            { "@type": "PropertyValue", name: "Typical rent", value: detail.housing.rentRange },
+            { "@type": "PropertyValue", name: "School district", value: detail.schools.district },
+          ],
+        }
+      : {}),
+    sameAs: base.website,
+    isAccessibleForFree: true,
+    publicAccess: false,
+  };
 
   return (
     <div style={{ backgroundColor: "#f8fafc", minHeight: "100vh" }}>
+      <JsonLd
+        data={[
+          placeSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Installations", path: "/installations" },
+            { name: base.name, path },
+          ]),
+        ]}
+      />
 
       {/* ── Dark header ──────────────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#0f172a", padding: "0 1.5rem" }}>
