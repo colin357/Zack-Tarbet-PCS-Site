@@ -6,10 +6,33 @@ import {
   Heart, Briefcase, Stethoscope, DollarSign, Car, Users, Building,
   Star, ArrowRight, Ticket,
 } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, absoluteUrl, SITE } from "@/data/site";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Fort Carson PCS Guide: Everything You Need to Know",
+  description:
+    "The ultimate guide to PCS'ing to Fort Carson, Colorado Springs — neighborhoods, schools, housing, BAH, things to do, spouse employment, healthcare, and VA loan resources.",
+  url: absoluteUrl("/pcs/fort-carson/guide"),
+  image: absoluteUrl(SITE.ogImage),
+  author: { "@id": absoluteUrl("/#organization") },
+  publisher: { "@id": absoluteUrl("/#organization") },
+  about: ["Fort Carson", "Colorado Springs", "Military PCS", "VA home loans"],
+  isPartOf: { "@id": absoluteUrl("/#website") },
+};
 
 export const metadata: Metadata = {
-  title: "Fort Carson PCS Guide | Everything You Need to Know | Heroes Home Network",
+  title: "Fort Carson PCS Guide | Everything You Need to Know",
   description: "The ultimate guide to PCS'ing to Fort Carson, Colorado Springs. Neighborhoods, schools, housing, BAH rates, things to do, spouse employment, healthcare, and VA loan resources.",
+  alternates: { canonical: "/pcs/fort-carson/guide" },
+  openGraph: {
+    title: "Fort Carson PCS Guide | Heroes Home Network",
+    description: "The ultimate guide to PCS'ing to Fort Carson, Colorado Springs: neighborhoods, schools, housing, BAH, things to do, and VA loan resources.",
+    url: "/pcs/fort-carson/guide",
+    type: "article",
+  },
 };
 
 const card = {
@@ -46,6 +69,16 @@ const tagStyle = {
 export default function FortCarsonGuidePage() {
   return (
     <div style={{ backgroundColor: "#0a0f1e" }}>
+      <JsonLd
+        data={[
+          articleSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "PCS to Fort Carson", path: "/pcs/fort-carson" },
+            { name: "Guide", path: "/pcs/fort-carson/guide" },
+          ]),
+        ]}
+      />
 
       {/* Thank You Hero */}
       <section style={{

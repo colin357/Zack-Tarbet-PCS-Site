@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, Home, DollarSign, Shield, Clock, ArrowRight } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "VA Home Loans | Heroes Home Network",
+  title: "VA Home Loans",
   description:
     "Learn about VA loan benefits, eligibility, and get pre-approved with Heroes Home Network — VA loan specialists serving military families across all 50 states.",
+  alternates: { canonical: "/va-home-loans" },
+  openGraph: {
+    title: "VA Home Loans | Heroes Home Network",
+    description:
+      "VA loan benefits, eligibility, and pre-approval for military families — $0 down, no PMI, fast PCS-ready closings in all 50 states.",
+    url: "/va-home-loans",
+    type: "website",
+  },
 };
 
 const benefits = [
@@ -34,6 +44,22 @@ const faqs = [
 export default function VAHomeLoansPage() {
   return (
     <div style={{ backgroundColor: "#0a0f1e" }}>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "VA Home Loans",
+            serviceType: "VA mortgage lending",
+            description:
+              "VA home loan origination and pre-approval for active-duty service members, veterans, and surviving spouses — $0 down, no PMI, competitive rates, and fast PCS-ready closings nationwide.",
+            path: "/va-home-loans",
+          }),
+          faqPageSchema(faqs),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "VA Home Loans", path: "/va-home-loans" },
+          ]),
+        ]}
+      />
       {/* Hero */}
       <section style={{
         background: "linear-gradient(135deg, #060c18 0%, #0a0f1e 100%)",

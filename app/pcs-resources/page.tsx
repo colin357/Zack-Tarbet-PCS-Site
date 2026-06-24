@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, Calendar, Home, Truck, DollarSign, BookOpen, ArrowRight } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, absoluteUrl } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "PCS Resources | Heroes Home Network",
+  title: "PCS Resources",
   description:
-    "Everything you need for your military PCS move: checklists, BAH info, housing tips, moving guides, and more.",
+    "Everything you need for your military PCS move: timeline checklists, BAH info, DoD moving entitlements, housing tips, and school resources.",
+  alternates: { canonical: "/pcs-resources" },
+  openGraph: {
+    title: "PCS Resources | Heroes Home Network",
+    description:
+      "Military PCS move checklists, BAH info, moving entitlements, and housing guidance — plan your relocation step by step.",
+    url: "/pcs-resources",
+    type: "website",
+  },
 };
 
 const checklistItems = [
@@ -23,9 +33,36 @@ const resources = [
   { icon: BookOpen, title: "Schools & Education", desc: "MilitaryChildCare.com helps with childcare. The Interstate Compact on Educational Opportunity for Military Children (MIC3) protects your kids' academic standing during transitions.", link: null, linkText: null },
 ];
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Military PCS Move Timeline & Checklist",
+  description:
+    "A step-by-step PCS timeline for military families — from 12+ months out through moving week.",
+  url: absoluteUrl("/pcs-resources"),
+  step: checklistItems.map((phase, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: phase.phase,
+    itemListElement: phase.items.map(item => ({
+      "@type": "HowToDirection",
+      text: item,
+    })),
+  })),
+};
+
 export default function PCSResourcesPage() {
   return (
     <div style={{ backgroundColor: "#0a0f1e" }}>
+      <JsonLd
+        data={[
+          howToSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "PCS Resources", path: "/pcs-resources" },
+          ]),
+        ]}
+      />
       {/* Hero */}
       <section style={{ background: "linear-gradient(135deg, #060c18 0%, #0a0f1e 100%)", padding: "4rem 1.5rem", borderBottom: "1px solid #1f2937" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
