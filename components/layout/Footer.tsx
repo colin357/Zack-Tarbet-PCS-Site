@@ -50,6 +50,7 @@ export default function Footer() {
             <h3 style={{ color: "#f1f5f9", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.08em", marginBottom: "1rem" }}>RESOURCES</h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {[
+                { label: "Military PCS Guide", href: "/military-pcs-guide" },
                 { label: "PCS Resources", href: "/pcs-resources" },
                 { label: "VA Home Loan Guide", href: "/va-home-loans" },
                 { label: "BAH Calculator", href: "/pcs-resources#bah" },
