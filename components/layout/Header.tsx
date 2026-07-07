@@ -214,7 +214,7 @@ export default function Header() {
               </div>
             </div>
 
-            {[{ label: "PCS RESOURCES", href: "/pcs-resources" }, { label: "VA HOME LOANS", href: "/va-home-loans" }, { label: "CONTACT", href: "/contact" }].map((item) => (
+            {[{ label: "PCS GUIDE", href: "/military-pcs-guide" }, { label: "PCS RESOURCES", href: "/pcs-resources" }, { label: "VA HOME LOANS", href: "/va-home-loans" }, { label: "CONTACT", href: "/contact" }].map((item) => (
               <Link key={item.href} href={item.href} style={{ color: "#d1d5db", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", textDecoration: "none" }}>
                 {item.label}
               </Link>
@@ -252,6 +252,7 @@ export default function Header() {
               </div>
             )}
             {[
+              { label: "PCS GUIDE", href: "/military-pcs-guide" },
               { label: "PCS RESOURCES", href: "/pcs-resources" },
               { label: "VA HOME LOANS", href: "/va-home-loans" },
               { label: "CONTACT", href: "/contact" },
