@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/pcs-checklist", priority: 0.8, changeFrequency: "monthly" },
     { path: "/pcs-weight-allowance", priority: 0.8, changeFrequency: "monthly" },
     { path: "/pcs-vehicle-shipping", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/military-onesource-pcs", priority: 0.8, changeFrequency: "monthly" },
     { path: "/installations", priority: 0.9, changeFrequency: "weekly" },
     { path: "/va-home-loans", priority: 0.9, changeFrequency: "monthly" },
     { path: "/pcs-resources", priority: 0.8, changeFrequency: "monthly" },
