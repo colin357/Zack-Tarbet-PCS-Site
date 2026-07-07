@@ -54,7 +54,7 @@ export default function Footer() {
                 { label: "PCS Resources", href: "/pcs-resources" },
                 { label: "VA Home Loan Guide", href: "/va-home-loans" },
                 { label: "BAH Calculator", href: "/pcs-resources#bah" },
-                { label: "PCS Checklist", href: "/pcs-resources#checklist" },
+                { label: "PCS Checklist", href: "/pcs-checklist" },
                 { label: "Housing on Base", href: "/pcs-resources#housing" },
                 { label: "Moving Tips", href: "/pcs-resources#moving" },
               ].map(link => (
