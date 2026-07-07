@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/", priority: 1.0, changeFrequency: "weekly" },
     { path: "/military-pcs-guide", priority: 0.9, changeFrequency: "monthly" },
     { path: "/pcs-checklist", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/pcs-weight-allowance", priority: 0.8, changeFrequency: "monthly" },
     { path: "/installations", priority: 0.9, changeFrequency: "weekly" },
     { path: "/va-home-loans", priority: 0.9, changeFrequency: "monthly" },
     { path: "/pcs-resources", priority: 0.8, changeFrequency: "monthly" },
