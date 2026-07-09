@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/military-onesource-pcs", priority: 0.8, changeFrequency: "monthly" },
     { path: "/installations", priority: 0.9, changeFrequency: "weekly" },
     { path: "/va-home-loans", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/va-loan-class", priority: 0.8, changeFrequency: "weekly" },
     { path: "/pcs-resources", priority: 0.8, changeFrequency: "monthly" },
     { path: "/pcs/fort-carson", priority: 0.7, changeFrequency: "monthly" },
     { path: "/pcs/fort-carson/guide", priority: 0.7, changeFrequency: "monthly" },
