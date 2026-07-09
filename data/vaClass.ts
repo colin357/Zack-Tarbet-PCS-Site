@@ -22,13 +22,13 @@ export const CONFIG = {
    * While this is left blank (""), the form skips the network call and jumps
    * straight to the confirmation screen so you can preview the full flow.
    */
-  FORM_ENDPOINT: "",
+  FORM_ENDPOINT: "https://hooks.zapier.com/hooks/catch/17690982/4u8leo0/",
 
   /**
    * The Zoom webinar registration / join link shown after someone signs up.
    * Replace with your real webinar link before launch.
    */
-  ZOOM_LINK: "https://zoom.us/webinar/register/REPLACE_WITH_YOUR_ZOOM_LINK",
+  ZOOM_LINK: "https://us06web.zoom.us/j/83498383970",
 
   /**
    * Class time, shown to visitors. TIMEZONE_LABEL is displayed verbatim, so
