@@ -4,6 +4,7 @@ import { CalendarDays, CheckCircle, Clock, Users, Video } from "lucide-react";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, absoluteUrl } from "@/data/site";
 import ClassSignupForm from "@/components/vaclass/ClassSignupForm";
+import SaveSpotButton from "@/components/vaclass/SaveSpotButton";
 import {
   CONFIG,
   getUpcomingClasses,
@@ -180,23 +181,7 @@ export default function VALoanClassPage() {
           </div>
 
           <div>
-            <a
-              href="#signup"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                backgroundColor: T.accent,
-                color: T.accentInk,
-                padding: "1rem 2.5rem",
-                borderRadius: "8px",
-                fontSize: "1rem",
-                fontWeight: 700,
-                textDecoration: "none",
-              }}
-            >
-              Save my spot
-            </a>
+            <SaveSpotButton targetId="class-signup">Save my spot</SaveSpotButton>
           </div>
         </div>
       </section>
@@ -367,7 +352,7 @@ export default function VALoanClassPage() {
       {/* ---------------------------------------------------------------- *
        * Sign-up form                                                      *
        * ---------------------------------------------------------------- */}
-      <section style={{ padding: "4rem 1.5rem" }}>
+      <section id="class-signup" style={{ padding: "4rem 1.5rem", scrollMarginTop: "80px" }}>
         <div style={{ maxWidth: "520px", margin: "0 auto" }}>
           <ClassSignupForm
             nextDateLabel={nextDateLabel}

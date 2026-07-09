@@ -59,7 +59,7 @@ export const CONFIG = {
      * Headshot. Drop a square image in /public (e.g. /zack-tarbet.jpg) and put
      * its path here. Leave "" to show a placeholder avatar with his initials.
      */
-    headshot: "",
+    headshot: "/zack-tarbet.jpg",
     bio:
       "Zack Tarbet is a VA loan specialist and in-house lender with Heroes Home Network. He works VA loans all day, every day, so he knows exactly where these deals get stuck and how to keep them moving. He runs this class because too many strong offers from veteran buyers get passed over for reasons that simply aren't true.",
   },
