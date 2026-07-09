@@ -73,6 +73,7 @@ export default function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {[
                 { label: "VA Loan Benefits", href: "/va-home-loans#benefits" },
+                { label: "Free VA Loan Class", href: "/va-loan-class" },
                 { label: "Eligibility Requirements", href: "/va-home-loans#eligibility" },
                 { label: "How It Works", href: "/va-home-loans#process" },
                 { label: "Get Pre-Approved", href: "/contact" },
