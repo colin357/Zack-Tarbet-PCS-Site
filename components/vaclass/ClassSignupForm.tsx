@@ -28,8 +28,6 @@ export default function ClassSignupForm({
   const [form, setForm] = useState({
     name: "",
     email: "",
-    brokerage: "",
-    role: "",
     phone: "",
     company: "", // honeypot — real people leave this empty
   });
@@ -48,8 +46,8 @@ export default function ClassSignupForm({
     if (!form.name.trim()) return setError("Please enter your name.");
     if (!/.+@.+\..+/.test(form.email.trim()))
       return setError("Please enter a valid email so we can send the link.");
-    if (!form.brokerage.trim())
-      return setError("Please enter your brokerage or team name.");
+    if (!form.phone.trim())
+      return setError("Please enter a phone number.");
 
     // Honeypot: a filled hidden field means a bot. Fake success, send nothing.
     if (form.company.trim()) {
@@ -62,9 +60,7 @@ export default function ClassSignupForm({
     const payload = {
       name: form.name.trim(),
       email: form.email.trim(),
-      brokerage: form.brokerage.trim(),
-      role: form.role || null,
-      phone: form.phone.trim() || null,
+      phone: form.phone.trim(),
       class: "VA Loan Class for Realtors",
       nextDate: nextDateLabel,
       submittedFrom: "va-loan-class-landing",
@@ -119,7 +115,6 @@ export default function ClassSignupForm({
   if (status === "done") {
     return (
       <div
-        id="signup"
         style={{
           backgroundColor: T.surface,
           border: `1px solid rgba(245, 197, 24, 0.3)`,
@@ -222,7 +217,6 @@ export default function ClassSignupForm({
   /* Form state ----------------------------------------------------------- */
   return (
     <div
-      id="signup"
       style={{
         backgroundColor: T.surface,
         border: `1px solid ${T.border}`,
@@ -264,58 +258,25 @@ export default function ClassSignupForm({
             value={form.email}
             onChange={update}
             required
-            placeholder="jane@brokerage.com"
+            placeholder="jane@email.com"
             style={inputStyle}
           />
         </div>
 
         <div>
-          <label htmlFor="brokerage" style={labelStyle}>
-            BROKERAGE / TEAM *
+          <label htmlFor="phone" style={labelStyle}>
+            PHONE *
           </label>
           <input
-            id="brokerage"
-            name="brokerage"
-            value={form.brokerage}
+            id="phone"
+            name="phone"
+            type="tel"
+            value={form.phone}
             onChange={update}
             required
-            placeholder="Doe Realty Group"
+            placeholder="(555) 123-4567"
             style={inputStyle}
           />
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-          <div>
-            <label htmlFor="role" style={labelStyle}>
-              ROLE
-            </label>
-            <select
-              id="role"
-              name="role"
-              value={form.role}
-              onChange={update}
-              style={{ ...inputStyle, cursor: "pointer" }}
-            >
-              <option value="">Select (optional)</option>
-              <option value="Agent">Agent</option>
-              <option value="Team Lead">Team Lead</option>
-              <option value="Broker Owner">Broker Owner</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="phone" style={labelStyle}>
-              PHONE
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={form.phone}
-              onChange={update}
-              placeholder="(optional)"
-              style={inputStyle}
-            />
-          </div>
         </div>
 
         {/* Honeypot: hidden from people, catnip for bots. Kept out of the tab
