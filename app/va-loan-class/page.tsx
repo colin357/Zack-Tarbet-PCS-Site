@@ -205,7 +205,7 @@ export default function VALoanClassPage() {
        * What you'll learn                                                 *
        * ---------------------------------------------------------------- */}
       <section style={{ padding: "4rem 1.5rem", borderBottom: sectionBorder }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
           <h2 style={{ color: T.text, fontSize: "1.75rem", fontWeight: 800, margin: "0 0 0.5rem", textAlign: "center" }}>
             What you&apos;ll learn
           </h2>
@@ -213,9 +213,9 @@ export default function VALoanClassPage() {
             One hour, no fluff. Here&apos;s what you walk away with.
           </p>
           <div
+            className="learn-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
               gap: "1.25rem",
             }}
           >
@@ -398,8 +398,23 @@ export default function VALoanClassPage() {
         </div>
       </section>
 
-      {/* Stack the host bio on small screens. */}
+      {/* Responsive grids: four "What you'll learn" cards on one row on
+          desktop, two on tablets, one on phones; host bio stacks on small
+          screens. */}
       <style>{`
+        .learn-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: 900px) {
+          .learn-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 560px) {
+          .learn-grid {
+            grid-template-columns: 1fr;
+          }
+        }
         @media (max-width: 640px) {
           .host-grid {
             grid-template-columns: 1fr !important;
