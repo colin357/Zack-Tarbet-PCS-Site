@@ -64,16 +64,34 @@ export const CONFIG = {
       "Zack Tarbet is a VA loan specialist and in-house lender with Heroes Home Network. He works VA loans all day, every day, so he knows exactly where these deals get stuck and how to keep them moving. He runs this class because too many strong offers from veteran buyers get passed over for reasons that simply aren't true.",
   },
 
-  /* Compliance footer — fill these in. Do not guess these values. ----- */
+  /* Compliance footer — the licensed lender's required disclosures. ---- */
   COMPLIANCE: {
     /** Loan officer's individual NMLS number (Zack). */
     loNmls: "2040562",
-    /** Company NMLS number. */
-    companyNmls: "REPLACE_WITH_COMPANY_NMLS",
     /** Company legal entity name. */
-    companyLegalName: "REPLACE_WITH_COMPANY_LEGAL_NAME",
+    companyLegalName: "OriginPoint LLC",
+    /** Company NMLS number. */
+    companyNmls: "2185899",
     /** Company mailing address (street, city, state, ZIP). */
-    companyAddress: "REPLACE_WITH_COMPANY_ADDRESS",
+    companyAddress: "1800 W. Larchmont Avenue, Suite 305, Chicago, IL 60613",
+    /** Company phone. */
+    companyPhone: "855-997-6468",
+    /** Copyright year range shown in the footer. */
+    copyrightYears: "2021-2026",
+    /** NMLS Consumer Access lookup URL (for the licensing line). */
+    nmlsConsumerAccessUrl: "https://www.nmlsconsumeraccess.org",
+    /** Arizona Mortgage Banker License number. */
+    arizonaLicense: "1038328",
+    /** Name the company operates under in California. */
+    caOperatingName: "OriginPoint Mortgage LLC",
+    /**
+     * Extra state/legal disclosure lines shown verbatim in the footer. Add,
+     * edit, or remove lines here as licensing requires.
+     */
+    disclosures: [
+      "This site is not authorized by the New York State Department of Financial Services. No mortgage loan applications for properties located in New York will be accepted through this site.",
+      "Operating in the state of California as OriginPoint Mortgage LLC in lieu of the legal name OriginPoint LLC.",
+    ] as string[],
   },
 
   /* Brand colors — a clean, trustworthy navy + a single gold accent. -- */
