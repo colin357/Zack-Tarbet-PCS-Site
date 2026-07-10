@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CalendarDays, CheckCircle, Clock, Users, Video } from "lucide-react";
+import { CalendarDays, CheckCircle, Clock, Home, Users, Video } from "lucide-react";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, absoluteUrl } from "@/data/site";
 import ClassSignupForm from "@/components/vaclass/ClassSignupForm";
@@ -15,6 +15,7 @@ import {
 } from "@/data/vaClass";
 
 const T = CONFIG.THEME;
+const C = CONFIG.COMPLIANCE;
 
 // Recompute the schedule at least hourly so "the next class" never goes stale,
 // while still serving a cached, fast page between regenerations.
@@ -368,18 +369,53 @@ export default function VALoanClassPage() {
        * ---------------------------------------------------------------- */}
       <section style={{ padding: "2.5rem 1.5rem", borderTop: sectionBorder, backgroundColor: T.bgDeep }}>
         <div style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p style={{ color: T.textDim, fontSize: "0.75rem", lineHeight: 1.7, margin: "0 0 0.75rem" }}>
-            {CONFIG.HOST.name}, {CONFIG.HOST.title} · NMLS# {CONFIG.COMPLIANCE.loNmls}. Provided by{" "}
-            {CONFIG.COMPLIANCE.companyLegalName}, NMLS# {CONFIG.COMPLIANCE.companyNmls},{" "}
-            {CONFIG.COMPLIANCE.companyAddress}.
+          {/* Equal Housing Lender mark */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+            <Home size={16} color={T.textMuted} />
+            <span style={{ color: T.textMuted, fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em" }}>
+              EQUAL HOUSING LENDER
+            </span>
+          </div>
+
+          {/* Educational disclaimer */}
+          <p style={{ color: T.textDim, fontSize: "0.75rem", lineHeight: 1.7, margin: "0 0 1rem" }}>
+            This class is for educational purposes only. It is not a commitment to lend, an offer or
+            extension of credit, or financial advice. All loans are subject to credit approval,
+            income verification, and property eligibility. Not affiliated with or endorsed by the
+            U.S. Department of Veterans Affairs or any government agency.
           </p>
-          <p style={{ color: T.textDim, fontSize: "0.75rem", lineHeight: 1.7, margin: "0 0 0.75rem" }}>
-            <strong style={{ color: T.textMuted }}>Equal Housing Opportunity.</strong> This class is
-            for educational purposes only. It is not a commitment to lend, an offer or extension of
-            credit, or financial advice. All loans are subject to credit approval, income
-            verification, and property eligibility. Not affiliated with or endorsed by the U.S.
-            Department of Veterans Affairs or any government agency.
+
+          {/* Loan officer + provider */}
+          <p style={{ color: T.textDim, fontSize: "0.75rem", lineHeight: 1.7, margin: "0 0 1rem" }}>
+            {CONFIG.HOST.name}, {CONFIG.HOST.title} · NMLS# {C.loNmls}. Provided by{" "}
+            {C.companyLegalName}, NMLS# {C.companyNmls}.
           </p>
+
+          {/* Company licensing block */}
+          <p style={{ color: T.textDim, fontSize: "0.75rem", lineHeight: 1.7, margin: "0 0 1rem" }}>
+            Copyright © {C.copyrightYears} {C.companyLegalName}. All rights reserved.
+            <br />
+            NMLS License #{C.companyNmls} — For licensing information, go to:{" "}
+            <a
+              href={C.nmlsConsumerAccessUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: T.textMuted, textDecoration: "underline" }}
+            >
+              {C.nmlsConsumerAccessUrl.replace(/^https?:\/\//, "")}
+            </a>
+            <br />
+            Arizona Mortgage Banker License #{C.arizonaLicense}
+            <br />
+            {C.companyAddress}, {C.companyPhone}
+          </p>
+
+          {/* State-specific disclosures */}
+          {C.disclosures.map((line) => (
+            <p key={line} style={{ color: T.textDim, fontSize: "0.75rem", lineHeight: 1.7, margin: "0 0 1rem" }}>
+              {line}
+            </p>
+          ))}
         </div>
       </section>
 
